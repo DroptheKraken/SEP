@@ -18,8 +18,8 @@ public class SepImpl  extends RecipeFinderGrpc.RecipeFinderImplBase
     public void getRecipes (RecipeRequest requestText, StreamObserver<RecipeResponse> responsetext)
     {
         RecipeRepository recipeRepository =new RecipeRepository();
-        RecipeResponse responseText1 = RecipeResponse.newBuilder().build();
-        recipeRepository.getByIngredient(requestText.getIngredient());
+        RecipeResponse responseText1 = RecipeResponse.newBuilder().setRecipes(String.valueOf(recipeRepository.getByIngredient(requestText.getIngredient()))).build();
+
 
             responsetext.onNext(responseText1);
             responsetext.onCompleted();

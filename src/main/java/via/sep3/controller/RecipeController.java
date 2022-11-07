@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import via.sep3.model.Recipe;
 import via.sep3.repository.RecipeRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -32,7 +33,7 @@ public class RecipeController
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public Recipe getRecipeByIngredient(@PathVariable String ingredient)
+    public ArrayList<Recipe>  getRecipeByIngredient(@PathVariable String ingredient)
     {
         return recipeRepository.getByIngredient(ingredient);
     }
