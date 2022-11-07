@@ -2,12 +2,11 @@ package via.sep3.grpc.server;
 
 import io.grpc.stub.StreamObserver;
 import org.lognet.springboot.grpc.GRpcService;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import via.sep3.grpc.proto.RecipeFinderGrpc;
 import via.sep3.grpc.proto.RecipeRequest;
 import via.sep3.grpc.proto.RecipeResponse;
-import via.sep3.sep3_1.repository.RecipeRepository;
+import via.sep3.repository.RecipeRepository;
 
 @GRpcService
 

@@ -1,4 +1,4 @@
-package via.sep3.sep3_1.model;
+package via.sep3.model;
 
 public class Recipe
 {

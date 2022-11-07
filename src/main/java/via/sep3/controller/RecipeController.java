@@ -1,9 +1,9 @@
-package via.sep3.sep3_1.controller;
+package via.sep3.controller;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import via.sep3.sep3_1.model.Recipe;
-import via.sep3.sep3_1.repository.RecipeRepository;
+import via.sep3.model.Recipe;
+import via.sep3.repository.RecipeRepository;
 
 import java.util.List;
 

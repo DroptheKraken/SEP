@@ -1,4 +1,4 @@
-package via.sep3.sep3_1;
+package via.sep3;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

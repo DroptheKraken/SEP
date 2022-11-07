@@ -1,7 +1,7 @@
-package via.sep3.sep3_1.repository;
+package via.sep3.repository;
 
 import org.springframework.stereotype.Repository;
-import via.sep3.sep3_1.model.Recipe;
+import via.sep3.model.Recipe;
 
 import java.util.List;
 
@@ -16,7 +16,8 @@ public class RecipeRepository
 
     public void saveRecipe(Recipe recipe)
     {
-        recipes.add(recipe);
+        recipes.add(recipe
+        );
     }
 
 
