@@ -3,6 +3,7 @@ package via.sep3.repository;
 import org.springframework.stereotype.Repository;
 import via.sep3.model.Recipe;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -21,21 +22,22 @@ public class RecipeRepository
     }
 
 
-    public Recipe getByIngredient(String ingredient)
+    public ArrayList<Recipe> getByIngredient(String ingredient)
     {
+        ArrayList<Recipe> recipes1 = new ArrayList<>();
         for (Recipe recipe : recipes)
         {
             for (String ingridient : recipe.getIngridient())
             {
                 if (ingridient.equals(ingredient))
                 {
-                    return recipe;
+                    recipes1.add(recipe);
                 }
             }
-        }
-        return null;
-    }
 
+        }
+        return recipes1;
+    }
 
     public List<Recipe> getAllRecipes()
     {
