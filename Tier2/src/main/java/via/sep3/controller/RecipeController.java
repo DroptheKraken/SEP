@@ -41,7 +41,7 @@ public class RecipeController
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public List<Recipe> getAllRecipes()
+    public String getAllRecipes()
     {
         return recipeRepository.getAllRecipes();
     }

@@ -1,0 +1,12 @@
+C:\Users\Andi\IdeaProjects\SEP\src\main\java\via\sep3\sep3_1\controller\RecipeController.java
+C:\Users\Andi\IdeaProjects\SEP\src\main\java\via\sep3\sep3_1\repository\RecipeRepository.java
+C:\Users\Andi\IdeaProjects\SEP\src\main\java\via\sep3\sep3_1\model\Ingridient.java
+C:\Users\Andi\IdeaProjects\SEP\src\main\java\via\sep3\grpc\proto\Recipes.java
+C:\Users\Andi\IdeaProjects\SEP\src\main\java\via\sep3\grpc\proto\RecipeResponseOrBuilder.java
+C:\Users\Andi\IdeaProjects\SEP\src\main\java\via\sep3\sep3_1\model\Recipe.java
+C:\Users\Andi\IdeaProjects\SEP\src\main\java\via\sep3\grpc\proto\RecipeRequest.java
+C:\Users\Andi\IdeaProjects\SEP\src\main\java\via\sep3\grpc\proto\RecipeResponse.java
+C:\Users\Andi\IdeaProjects\SEP\src\main\java\via\sep3\grpc\server\SepImpl.java
+C:\Users\Andi\IdeaProjects\SEP\src\main\java\via\sep3\grpc\proto\RecipeFinderGrpc.java
+C:\Users\Andi\IdeaProjects\SEP\src\main\java\via\sep3\sep3_1\Sep31Application.java
+C:\Users\Andi\IdeaProjects\SEP\src\main\java\via\sep3\grpc\proto\RecipeRequestOrBuilder.java

@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\alexc\\.nuget\\packages\\": {}
+    "C:\\Users\\Andi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VIA\\SEP3\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\BlazorAppTier1.csproj",
+      "projectUniqueName": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\BlazorAppTier1.csproj",
       "projectName": "BlazorAppTier1",
-      "projectPath": "D:\\VIA\\SEP3\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\BlazorAppTier1.csproj",
-      "packagesPath": "C:\\Users\\alexc\\.nuget\\packages\\",
-      "outputPath": "D:\\VIA\\SEP3\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\obj\\",
+      "projectPath": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\BlazorAppTier1.csproj",
+      "packagesPath": "C:\\Users\\Andi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\alexc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Andi\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -62,7 +62,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

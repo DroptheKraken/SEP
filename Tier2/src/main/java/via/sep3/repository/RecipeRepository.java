@@ -39,8 +39,8 @@ public class RecipeRepository
         return recipes1;
     }
 
-    public List<Recipe> getAllRecipes()
+    public String getAllRecipes()
     {
-        return recipes;
+        return recipes.get(0).toString();
     }
 }
