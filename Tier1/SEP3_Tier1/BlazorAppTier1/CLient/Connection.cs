@@ -11,7 +11,7 @@ public class Connection
     
         clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
         using HttpClient client = new HttpClient(clientHandler);
-        HttpResponseMessage responseMessage = await client.GetAsync("https://localhost:8080/recipes/v1/recipes");
+        HttpResponseMessage responseMessage = await client.GetAsync("http://localhost:8080/recipes/v1/recipes");
         
         if(!responseMessage.IsSuccessStatusCode)
         {
