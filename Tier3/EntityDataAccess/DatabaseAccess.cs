@@ -33,13 +33,6 @@ public class DatabaseAccess : DbContext
                 Email = "bp@gmail.com",
                 Password = "pass",
                 Role = "Admin"
-            },
-            new User
-            {
-                Username = "Jan",
-                Email = "jan@gmail.com",
-                Password = "qwer",
-                Role = "User"
             }
         );
         

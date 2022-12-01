@@ -31,17 +31,14 @@ public class User
     public User()
     {
     }
-    /*public User(int id, string username, string password, string email, string role)
+    public User(int id, string username, string password, string email, string role)
     {
         Id = id;
         Username = username;
         Password = password;
         Email = email;
         Role = role;
-        LikedRecipes = null;
-        PostedRecipes = null;
     }
-    */
     
     /*
     private User(){}

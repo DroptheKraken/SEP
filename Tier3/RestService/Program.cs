@@ -1,5 +1,6 @@
+using DaoInterfaces;
 using EntityDataAccess;
-using Microsoft.EntityFrameworkCore;
+using EntityDataAccess.DAOs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,9 @@ builder.Services.AddSwaggerGen();
 
 
 builder.Services.AddDbContext<DatabaseAccess>();
+
+
+builder.Services.AddScoped<IUserDao, UserDaoImpl>();
 
 
 var app = builder.Build();
