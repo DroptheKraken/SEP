@@ -1,0 +1,33 @@
+﻿
+@using BlazorAppTier1.Services
+@namespace Login
+@inject NavigationManager NavManager
+@inject IAuthService AuthService
+
+
+<AuthorizeView>
+    <Authorized>
+        <img class="icon" src="img/Logout.png" @onclick="Logout"/>
+    </Authorized>
+    <NotAuthorized>
+       <button type="button" title="Start buying" class="w-full rounded-full bg-yellow-300 py-3 px-6 text-center transition hover:bg-red-100 focus:bg-yellow-300 active:bg-yellow-400 sm:w-max">
+           <span class="block text-sm font-semibold text-yellow-900" @onclick="Login"/> Login 
+                     </button>
+    </NotAuthorized>
+</AuthorizeView>
+
+
+
+
+@code {
+    private void Login()
+    {
+        NavManager.NavigateTo("/Login");
+    }
+
+    private async Task Logout()
+    {
+        await AuthService.LogoutAsync();
+        NavManager.NavigateTo("/");
+    }
+}
