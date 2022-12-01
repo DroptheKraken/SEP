@@ -1,6 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Domain.Models;
 
+[Table("User")]
 public class User
 {
     /*[Key]
@@ -14,13 +17,20 @@ public class User
     public ICollection<Recipe>? PostedRecipes { get; set; }*/
     
     // No relationships
-    public int Id { get; set; }
-    public string Username { get; set; }
-    public string Password { get; set; }  
-    public string Email { get; set; }
-    public string Role { get; set; }
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int Id { get;  set; }
+    [Column("Username")]
+    public string? Username { get;  set; }
+    [Column("Password")]
+    public string? Password { get;  set; }  
+    [Column("Email")]
+    public string? Email { get;  set; }
+    [Column("Role")]
+    public string? Role { get;  set; }
     
-    
+    public User()
+    {
+    }
     /*public User(int id, string username, string password, string email, string role)
     {
         Id = id;
@@ -31,7 +41,11 @@ public class User
         LikedRecipes = null;
         PostedRecipes = null;
     }
+    */
     
-    
-    private User(){}*/
+    /*
+    private User(){}
+    */
+
+
 }
