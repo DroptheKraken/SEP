@@ -6,18 +6,8 @@ namespace Domain.Models;
 [Table("User")]
 public class User
 {
-    /*[Key]
-    public int Id { get; set; } // auto incremented
-    public string? Username { get; set; }
-    public string? Password { get; set; }
-    public string? Email { get; set; } // must be unique, must contain @
-    public string? Role { get; set; } // not-registered, logged in, admin
-    
-    public ICollection<Recipe>? LikedRecipes { get; set; }
-    public ICollection<Recipe>? PostedRecipes { get; set; }*/
-    
-    // No relationships
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Key]   
     public int Id { get;  set; }
     [Column("Username")]
     public string? Username { get;  set; }
@@ -27,6 +17,16 @@ public class User
     public string? Email { get;  set; }
     [Column("Role")]
     public string? Role { get;  set; }
+    
+    [Column("PostedRecipes")]
+    public List<RecipeRequest>? PostedRecipes { get; set; } // RecipeRequests that have been approved by the admin, bool = true
+
+    public new int RecipeRequestId = new Recipe().Id;
+
+
+    [ForeignKey(nameof(Models.Rating.RatingId))]
+    public int RatingId { get; set; }
+    public Rating Rating { get; set; }
     
     public User()
     {
@@ -39,10 +39,4 @@ public class User
         Email = email;
         Role = role;
     }
-    
-    /*
-    private User(){}
-    */
-
-
 }
