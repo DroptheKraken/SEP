@@ -32,11 +32,11 @@
             </div>
 
             <div class="w-full space-y-2 border-yellow-200 md:w-max lg:space-y-0 lg:border-l">
-              <button type="button" title="Start buying" class="w-full rounded-full py-3 px-6 text-center transition focus:bg-yellow-100 active:bg-yellow-200 sm:w-max">
+              <button type="button" title="Start buying" class="w-full rounded-full py-3 px-6 text-center transition focus:bg-yellow-100 active:bg-yellow-200 sm:w-max" @onclick="Register">
                 <span class="block text-sm font-semibold text-yellow-800"> Sign up </span>
               </button>
               <button type="button" title="Start buying" class="w-full rounded-full bg-yellow-300 py-3 px-6 text-center transition hover:bg-red-100 focus:bg-yellow-300 active:bg-yellow-400 sm:w-max" @onclick="Login">
-                <span class="block text-sm font-semibold text-yellow-900" /> Login 
+                <span class="block text-sm font-semibold text-yellow-900"> Login </span>
               </button>
              
             </div>
@@ -48,7 +48,7 @@
       <div class="container m-auto px-6 pt-32 md:px-12 lg:px-7 lg:pt-[4.8rem]">
         <div class="flex flex-wrap items-center px-2 md:px-0">
           <div class="relative lg:w-6/12 lg:py-24 xl:py-32">
-            <h1 class="text-4xl font-bold text-yellow-900 md:text-5xl lg:w-10/12">Search What You Have</h1>
+            <h1 class="text-4xl font-bold text-yellow-900 md:text-5xl lg:w-10/12">What ingredients do you have ?</h1>
             <form action="" class="mt-12 w-full">
               <div class="relative flex rounded-full border border-yellow-200 bg-white p-1 shadow-md md:p-2">
                 <select class="hidden rounded-full bg-transparent p-3 md:block md:p-4" name="domain" id="domain">
@@ -77,6 +77,14 @@
   
 </main>
 
+<CascadingAuthenticationState>
+  <AuthorizeView>
+    <button type="button" title="Search" class="ml-auto rounded-full bg-gradient-to-b bg-yellow-300 py-3 px-6 text-center transition hover:bg-red-100 focus:bg-yellow-300 active:bg-yellow-400 md:px-12" style = "margin-left: 10%" @onclick="AddRecipe">
+      <span class="block text-sm font-semibold text-yellow-900"> + Add Recipe </span>
+    </button>
+  </AuthorizeView>
+</CascadingAuthenticationState>
+
 @code
 {
   private void Login()
@@ -89,4 +97,13 @@
     await AuthService.LogoutAsync();
     NavManager.NavigateTo("/");
   }
+  private void AddRecipe()
+  {
+    NavManager.NavigateTo("/AddRecipe");
+  }
+  private void Register()
+  {
+    NavManager.NavigateTo("/Register");
+  }
+  
 }

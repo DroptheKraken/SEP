@@ -90,3 +90,4 @@ C:\Users\Andi\IdeaProjects\SEP\Tier1\SEP3_Tier1\BlazorAppTier1\bin\Debug\net6.0\
 C:\Users\Andi\IdeaProjects\SEP\Tier1\SEP3_Tier1\BlazorAppTier1\bin\Debug\net6.0\WebApi.pdb
 C:\Users\Andi\IdeaProjects\SEP\Tier1\SEP3_Tier1\BlazorAppTier1\obj\Debug\net6.0\BlazorAppTier1.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Andi\IdeaProjects\SEP\Tier1\SEP3_Tier1\BlazorAppTier1\obj\Debug\net6.0\BlazorAppTier1.csproj.CopyComplete
+C:\Users\Andi\IdeaProjects\SEP\Tier1\SEP3_Tier1\BlazorAppTier1\obj\Debug\net6.0\scopedcss\Pages\AddRecipe.razor.rz.scp.css
