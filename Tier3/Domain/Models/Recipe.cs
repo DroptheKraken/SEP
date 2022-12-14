@@ -20,11 +20,14 @@ public class Recipe
 
     // Navigation properties
     public ICollection<Rating>? Ratings { get; set; }
-    public ICollection<Ingredient>? Ingredients { get; set; }
-    
+    [Column("Ingredients")]
+    public string Ingredients { get; set; }
+
     // Posted recipes
     [ForeignKey(nameof(User.Id))]
     public int UserId { get; set; }
+    [Column("Status")]
+    public bool Status { get; set; }
     
     /*public Recipe(int id, string title, Description description, ICollection<Ingredient> ingredients, int noOfIngredients, int noOfLikes, Rating rating)
     {

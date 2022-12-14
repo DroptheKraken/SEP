@@ -3,6 +3,7 @@ using System;
 using EntityDataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EntityDataAccess.Migrations
 {
     [DbContext(typeof(DatabaseAccess))]
-    partial class DatabaseAccessModelSnapshot : ModelSnapshot
+    [Migration("20221214120540_DatabaseFinalV2")]
+    partial class DatabaseFinalV2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.9");
@@ -74,11 +76,6 @@ namespace EntityDataAccess.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("TEXT")
                         .HasColumnName("Description");
-
-                    b.Property<string>("Ingredients")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("Ingredients");
 
                     b.Property<int?>("NoOfIngredients")
                         .HasColumnType("INTEGER")
@@ -152,7 +149,7 @@ namespace EntityDataAccess.Migrations
             modelBuilder.Entity("Domain.Models.Ingredient", b =>
                 {
                     b.HasOne("Domain.Models.Recipe", "Recipe")
-                        .WithMany()
+                        .WithMany("Ingredients")
                         .HasForeignKey("RecipeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -198,6 +195,8 @@ namespace EntityDataAccess.Migrations
 
             modelBuilder.Entity("Domain.Models.Recipe", b =>
                 {
+                    b.Navigation("Ingredients");
+
                     b.Navigation("Ratings");
                 });
 

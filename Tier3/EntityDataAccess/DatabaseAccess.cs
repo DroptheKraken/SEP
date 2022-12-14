@@ -52,10 +52,12 @@ public class DatabaseAccess : DbContext
         // Recipe  
         modelBuilder.Entity<Recipe>().HasKey(recipe => recipe.Id);
         modelBuilder.Entity<Recipe>().HasMany(rating => rating.Ratings);
+        /*
         modelBuilder.Entity<Recipe>()
             .HasMany(recipe => recipe.Ingredients)
             .WithOne(ingredient => ingredient.Recipe)
             .HasForeignKey(fk => fk.RecipeId);
+            */
        
         // RecipeRequest
         // modelBuilder.Entity<RecipeRequest>().HasKey(r => r.Id);
