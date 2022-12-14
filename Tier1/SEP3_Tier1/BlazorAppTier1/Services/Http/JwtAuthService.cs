@@ -7,7 +7,7 @@ using Domain.Models;
 
 namespace BlazorAppTier1.Services.Http;
 
-public class JwtAuthService
+public class JwtAuthService : IAuthService
 {
     private readonly HttpClient client = new();
     

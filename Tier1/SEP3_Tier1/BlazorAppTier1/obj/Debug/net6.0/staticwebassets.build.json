@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6adXp4thnMXskeHEfglQHEhgXfa8SR5mu9YPD9mUn6s=",
+  "Hash": "jz/YsgcQ1I5kbuz6uwdvqCMjo1t29HvMF+6UFXKOd3s=",
   "Source": "BlazorAppTier1",
   "BasePath": "_content/BlazorAppTier1",
   "Mode": "Default",
@@ -95,6 +95,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\Login.css",
+      "SourceId": "BlazorAppTier1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
+      "BasePath": "_content/BlazorAppTier1",
+      "RelativePath": "css/Login.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Login.css"
     },
     {
       "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",

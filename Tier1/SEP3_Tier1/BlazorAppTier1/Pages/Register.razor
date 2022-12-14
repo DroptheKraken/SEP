@@ -1,0 +1,72 @@
+﻿@page "/Register"
+@using Domain.DTOs
+@using HttpClients.ClientInterfaces
+@inject IUserInterface userService
+@using global::Domain.DTOs
+@using BlazorAppTier1.Services
+@layout RegisterLayout
+<h3>Register</h3>
+
+
+<CascadingAuthenticationState>
+<AuthorizeView>
+    <NotAuthorized>
+        <div class="card">
+            <h3>Register</h3>
+            <div class="field">
+                <label >
+                    <span class=" oi oi-person"> Username: </span>
+                </label>
+                <input type="text" @bind="userName"/>
+            </div>
+            <div class="field">
+                <label style="text-align: center ; padding: 4px">
+                    <span class=" oi oi-lock-locked"> Password: </span>
+                </label>
+                <input type="password" @bind="password"/>
+            </div>
+            @if (!string.IsNullOrEmpty(resultMsg))
+            {
+                <div class="field">
+                    <label style="color: red">
+                        @resultMsg</label>
+                </div>
+            }
+
+            <div class="field">
+                <button class="loginbtn" title="Register" @onclick="Create">Register <span class="oi oi-key"></span></button>
+            </div>
+        </div>
+    </NotAuthorized>
+    <Authorized>
+        <div class="card">
+            <h3>Hello, @context.User.Identity.Name</h3>
+        </div>
+    </Authorized>
+</AuthorizeView>
+</CascadingAuthenticationState>
+@code {
+    private string userName = "";
+    private string password = "";
+    private string resultMsg = "";
+    private string color = "";
+
+    private async Task Create()
+    {
+        resultMsg = "";
+
+        try
+        {
+            await userService.Create(new UserCreationDto(userName,password));
+            userName = "";
+            resultMsg = "User successfully created";
+            color = "green";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            resultMsg = e.Message;
+           
+        }
+    }
+}

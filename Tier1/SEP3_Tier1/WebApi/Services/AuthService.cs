@@ -95,7 +95,7 @@ public class AuthService : IAuthService
             string userAsJson = JsonSerializer.Serialize(userCreationDto);
             StringContent content = new(userAsJson, Encoding.UTF8, "application/json");
 
-            HttpResponseMessage response = await client.PostAsync("http://localhost:7111/auth/login", content);
+            HttpResponseMessage response = await client.PostAsync("http://localhost:7267/auth/login", content);
             string responseContent = await response.Content.ReadAsStringAsync();
 
             if (!response.IsSuccessStatusCode)
