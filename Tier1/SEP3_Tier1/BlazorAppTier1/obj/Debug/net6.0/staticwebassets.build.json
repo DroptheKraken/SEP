@@ -1,26 +1,38 @@
 {
   "Version": 1,
-  "Hash": "aUH7CnnfvidSmcijNjO/LiHzmXJrMF3Q6Qvvc7CwgDI=",
+  "Hash": "6adXp4thnMXskeHEfglQHEhgXfa8SR5mu9YPD9mUn6s=",
   "Source": "BlazorAppTier1",
   "BasePath": "_content/BlazorAppTier1",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\WebApi\\WebApi.csproj",
+      "Version": 2,
+      "Source": "WebApi",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    }
+  ],
   "DiscoveryPatterns": [
     {
       "Name": "BlazorAppTier1\\wwwroot",
       "Source": "BlazorAppTier1",
-      "ContentRoot": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
       "BasePath": "_content/BlazorAppTier1",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\obj\\Debug\\net6.0\\scopedcss\\bundle\\BlazorAppTier1.styles.css",
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\obj\\Debug\\net6.0\\scopedcss\\bundle\\BlazorAppTier1.styles.css",
       "SourceId": "BlazorAppTier1",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/BlazorAppTier1",
       "RelativePath": "BlazorAppTier1.styles.css",
       "AssetKind": "All",
@@ -31,13 +43,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\obj\\Debug\\net6.0\\scopedcss\\bundle\\BlazorAppTier1.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\obj\\Debug\\net6.0\\scopedcss\\bundle\\BlazorAppTier1.styles.css"
     },
     {
-      "Identity": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BlazorAppTier1.bundle.scp.css",
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BlazorAppTier1.bundle.scp.css",
       "SourceId": "BlazorAppTier1",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/BlazorAppTier1",
       "RelativePath": "BlazorAppTier1.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +60,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BlazorAppTier1.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BlazorAppTier1.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "BlazorAppTier1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
       "BasePath": "_content/BlazorAppTier1",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -68,10 +80,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "BlazorAppTier1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
       "BasePath": "_content/BlazorAppTier1",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -85,10 +97,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "BlazorAppTier1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
       "BasePath": "_content/BlazorAppTier1",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -102,10 +114,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "BlazorAppTier1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
       "BasePath": "_content/BlazorAppTier1",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -119,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "BlazorAppTier1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
       "BasePath": "_content/BlazorAppTier1",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -136,10 +148,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "BlazorAppTier1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
       "BasePath": "_content/BlazorAppTier1",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -153,10 +165,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "BlazorAppTier1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
       "BasePath": "_content/BlazorAppTier1",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -170,10 +182,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "BlazorAppTier1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
       "BasePath": "_content/BlazorAppTier1",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -187,10 +199,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "BlazorAppTier1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
       "BasePath": "_content/BlazorAppTier1",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -204,10 +216,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "BlazorAppTier1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
       "BasePath": "_content/BlazorAppTier1",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -221,10 +233,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "BlazorAppTier1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
       "BasePath": "_content/BlazorAppTier1",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -238,10 +250,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\css\\site.css",
       "SourceId": "BlazorAppTier1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
       "BasePath": "_content/BlazorAppTier1",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -255,10 +267,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\favicon.ico",
       "SourceId": "BlazorAppTier1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bhup0\\Documents\\GitHub\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
       "BasePath": "_content/BlazorAppTier1",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -270,6 +282,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\img\\Login.png",
+      "SourceId": "BlazorAppTier1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
+      "BasePath": "_content/BlazorAppTier1",
+      "RelativePath": "img/Login.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Login.png"
+    },
+    {
+      "Identity": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\img\\Logout.png",
+      "SourceId": "BlazorAppTier1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\wwwroot\\",
+      "BasePath": "_content/BlazorAppTier1",
+      "RelativePath": "img/Logout.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Logout.png"
     }
   ]
 }
