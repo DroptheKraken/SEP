@@ -53,5 +53,9 @@ public class UserLogic : IUserLogic
     {
         return userDao.GetAsync(searchParameters);
     }
-
+    
+    public Task<IEnumerable<User>> GetAllUsersAsync()
+    {
+        return userDao.GetAllUsersAsync();
+    }
 }

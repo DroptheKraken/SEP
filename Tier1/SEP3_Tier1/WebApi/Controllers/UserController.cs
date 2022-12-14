@@ -52,4 +52,13 @@ public class UserController : ControllerBase
             return StatusCode(500, e.Message);
         }
     }
+    [HttpGet]
+    [Route("users")]
+    public async Task<List<User>> GetAllUsers()
+    {
+        IEnumerable<User> users = await userLogic.GetAllUsersAsync();
+        return users.ToList();
+    }
+    
+    
 }

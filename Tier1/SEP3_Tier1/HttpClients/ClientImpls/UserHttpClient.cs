@@ -34,7 +34,7 @@ public class UserHttpClient : IUserInterface
 
     public async Task<IEnumerable<User>> GetUsers(string? usernameContains = null)
     {
-        string uri = "/User";
+        string uri = "/user/users";
         if (!string.IsNullOrEmpty(usernameContains))
         {
             uri += $"?username={usernameContains}";
