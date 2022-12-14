@@ -52,6 +52,8 @@
     private IEnumerable<User>? users;
     private int? selectedUserId;
     private string todoTitle = "";
+    private string description = "";
+    private string ingredients = "";
     
 
     private string msg = "";
@@ -86,7 +88,7 @@
 
         try
         {
-            RecipeCreationDto dto = new((int)selectedUserId, todoTitle);
+            RecipeCreationDto dto = new((int)selectedUserId, todoTitle, description, ingredients);
             await _recipeInterface.CreateAsync(dto);
             NavigationManager.NavigateTo("/");
         }
