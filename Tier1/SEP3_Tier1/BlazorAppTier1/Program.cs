@@ -27,6 +27,7 @@ builder.Services.AddScoped(sp =>
     });
 builder.Services.AddScoped<IAuthService, JwtAuthService>();
 builder.Services.AddScoped<IUserInterface, UserHttpClient>();
+builder.Services.AddScoped<IRecipeInterface, RecipeHttpClient>();
 var app = builder.Build();
 
 

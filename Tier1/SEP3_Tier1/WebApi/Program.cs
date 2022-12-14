@@ -12,11 +12,14 @@ using System.Text;
 using Application.DaoInterfaces;
 using Application.Logic;
 using Application.LogicInterfaces;
+using Domain.DTOs;
 using FileData;
 using FileData.DAOs;
+using HttpClients.ClientImpls;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using WebApi.Services;
+using HttpClients.ClientInterfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,10 +29,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
 builder.Services.AddScoped<FileContext>();
 builder.Services.AddScoped<IUserDao, UserFileDao>();
 builder.Services.AddScoped<IUserLogic, UserLogic>();
+
+
+
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {

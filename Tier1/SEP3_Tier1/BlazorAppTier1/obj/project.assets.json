@@ -334,6 +334,7 @@
           "Application": "1.0.0",
           "Domain": "1.0.0",
           "FileData": "1.0.0",
+          "HttpClients": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },

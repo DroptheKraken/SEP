@@ -1,3 +1,30 @@
+/* _content/BlazorAppTier1/Pages/AddRecipe.razor.rz.scp.css */
+.card[b-kht9qfx42l] {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 250px;
+    padding: 25px;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 15px;
+}
+
+.field[b-kht9qfx42l] {
+    margin-top: 20px;
+}
+
+.acceptbtn[b-kht9qfx42l] {
+    background-color: lightgreen;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.button-row[b-kht9qfx42l] {
+    margin-top: 15px;
+}
 /* _content/BlazorAppTier1/Shared/MainLayout.razor.rz.scp.css */
 /* _content/BlazorAppTier1/Shared/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-4oagloexvm] {

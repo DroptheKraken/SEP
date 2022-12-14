@@ -34,7 +34,7 @@ public class UserHttpClient : IUserInterface
 
     public async Task<IEnumerable<User>> GetUsers(string? usernameContains = null)
     {
-        string uri = "/users";
+        string uri = "/User";
         if (!string.IsNullOrEmpty(usernameContains))
         {
             uri += $"?username={usernameContains}";
@@ -43,6 +43,9 @@ public class UserHttpClient : IUserInterface
         string result = await response.Content.ReadAsStringAsync();
         if (!response.IsSuccessStatusCode)
         {
+            if (string.IsNullOrEmpty(result)) {
+                throw new Exception("Request failed with empty response");
+            }
             throw new Exception(result);
         }
 
