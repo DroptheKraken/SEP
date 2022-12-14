@@ -1,5 +1,7 @@
-﻿using System.Net.Http.Json;
+﻿using System.Data;
+using System.Net.Http.Json;
 using System.Text.Json;
+using BlazorAppTier1.CLient;
 using Domain.DTOs;
 using Domain.Models;
 using HttpClients.ClientInterfaces;
@@ -18,7 +20,8 @@ public class UserHttpClient : IUserInterface
 
     public async Task<User> Create(UserCreationDto dto)
     {
-        HttpResponseMessage response = await client.PostAsJsonAsync("/user", dto);
+        User user = Connection.CreateUser(dto.UserName, dto.Password).Result;
+      /*  HttpResponseMessage response = await client.PostAsJsonAsync("/user", dto);
         string result = await response.Content.ReadAsStringAsync();
         if (!response.IsSuccessStatusCode)
         {
@@ -28,7 +31,7 @@ public class UserHttpClient : IUserInterface
         User user = JsonSerializer.Deserialize<User>(result, new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true
-        })!;
+        })!;*/
         return user;
     }
 

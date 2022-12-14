@@ -19,6 +19,7 @@ public class RecipeController : ControllerBase
             this.recipelogic = recipeLogic;
          }
         
+         [HttpPost]
          public async Task<ActionResult<Recipe>> CreateAsync(RecipeCreationDto dto)
          {
              try
@@ -33,11 +34,11 @@ public class RecipeController : ControllerBase
              }
          }
          
-        [HttpGet]
+        /*[HttpGet]
         public async Task<List<Recipe>> SearchIssuesAsync(string searchItem)
         {
-            return await Task.Run(() => Recipe.Search(searchItem));
-        }
+            return await Task.Run(() => Recipe.Search(searchItem));*/
+        
 
     
 }

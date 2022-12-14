@@ -2,6 +2,7 @@
 using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
+using BlazorAppTier1.CLient;
 using Domain.DTOs;
 using Domain.Models;
 
@@ -14,11 +15,10 @@ public class AuthService : IAuthService
         public Task<User> ValidateUser(string username, string password)
         {
             
-            string json = File .ReadAllText("data.json");
-            Root users = JsonSerializer.Deserialize<Root>(json);
+            Task<User> user = Connection.FetchUser(username);
             
-            User existingUser = users.Users.FirstOrDefault(u => u.UserName == username && u.Password == password);
-
+            User existingUser = user.Result;
+            
             if (existingUser == null)
             {
                 throw new Exception("User not found");
@@ -37,6 +37,8 @@ public class AuthService : IAuthService
             throw new NotImplementedException();
         }
 
+    
+
         public Task RegisterUser(User user)
         {
 
@@ -49,14 +51,18 @@ public class AuthService : IAuthService
             {
                 throw new ValidationException("Password cannot be null");
             }
-            // Do more user info validation here
-        
-            // save to persistence instead of list
-        
-            /*users.Add(user);*/
             
-             
-            return Task.CompletedTask;
+            try
+            {
+                Connection.CreateUser(user.UserName, user.Password);
+                return Task.CompletedTask;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            
         }
         public static string? Jwt { get; private set; } = "";
     
@@ -159,5 +165,6 @@ public class AuthService : IAuthService
             throw new NotImplementedException();
         }
 
+    
         public Action<ClaimsPrincipal> OnAuthStateChanged { get; set; }
 }

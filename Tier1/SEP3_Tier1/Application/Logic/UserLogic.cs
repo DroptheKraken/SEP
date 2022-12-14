@@ -1,5 +1,6 @@
 ﻿using Application.DaoInterfaces;
 using Application.LogicInterfaces;
+using BlazorAppTier1.CLient;
 using Domain.DTOs;
 using Domain.Models;
 
@@ -29,7 +30,7 @@ public class UserLogic : IUserLogic
             Password = dto.Password
         };
         
-        User created = await userDao.CreateAsync(toCreate);
+        User created = await Connection.CreateUser(dto.UserName, dto.Password);
         
         return created;
     }

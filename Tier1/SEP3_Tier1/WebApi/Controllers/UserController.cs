@@ -12,7 +12,7 @@ namespace WebApi.Controllers;
 
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class UserController : ControllerBase
 {
     private readonly IUserLogic userLogic;
@@ -61,4 +61,4 @@ public class UserController : ControllerBase
     }
     
     
-}m
+}
