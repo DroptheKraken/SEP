@@ -1,0 +1,102 @@
+﻿@page "/Admin"
+@using BlazorAppTier1.Services
+@using Domain.Models
+@inject IAuthService AuthService
+@inject NavigationManager NavManager
+@layout LoginLayout
+
+<rel src="~/css/Admin.css" />
+<h3 class="header-login" >Admin</h3>
+<!-- component -->
+<CascadingAuthenticationState>
+    <AuthorizeView>
+        <NotAuthorized> 
+            <div class="text-gray-900 bg-gray-200">
+                <div class="p-4 flex">
+                    <h1 class="text-3xl">
+                        Recipes
+                    </h1>
+                </div>
+                <div class="px-3 py-4 flex justify-center">
+                    <table class="w-full text-md bg-white shadow-md rounded mb-4">
+                        <tbody>
+                        <tr class="border-b">
+                            <th class="text-left p-3 px-5">Title</th>
+                            <th class="text-left p-3 px-5">Description</th>
+                            <th class="text-left p-3 px-5">Ingredients</th>
+                            <th class="text-left p-3 px-5">Sent by</th>
+                            <th class="text-left p-3 px-5">Status</th>
+                            <th class="text-left p-3 px-5">Response</th>
+                        </tr>
+                        @foreach (var recipe in Recipes)
+                        {
+                            <tr class="border-b hover:bg-orange-100">
+                                <td class="p-3 px-5">@recipe.Title</td>
+                                <td class="p-3 px-5">@recipe.Description</td>
+                                <td class="p-3 px-5">@recipe.Ingredients</td>
+                                <td class="p-3 px-5">@recipe.userId</td>
+                                <td class="p-3 px-5">@recipe.Status</td>
+                                <td class="p-3 px-5">
+                                    <button type="button" class="btn btn-primary">Accept</button>
+                                    <button type="button" class="btn btn-primary">Decline</button>
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btn btn-primary" @onclick="AddUserToTabel">
+                    Add User
+                    </button>
+            </div>
+        </NotAuthorized>
+        <Authorized>    
+            </Authorized>
+    </AuthorizeView>
+</CascadingAuthenticationState>
+
+@code {
+    private List<Recipe> Recipes;
+    
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    // Initialize collection of items get it from some service or contextList<Recipe> Recipes = new List<Recipe>();
+        Recipes = new List<Recipe>()
+        {
+            new Recipe()
+            {
+                Description = "description",
+                Id = 0,
+                Ingredients = new[] { "ingredient1", "ingredient2" },
+                Status = false,
+                Title = "title",
+                userId = 0
+            },
+            new Recipe()
+            {
+                Description = "description1",
+                Id = 1,
+                Ingredients = new[] { "ingredient3", "ingredient4" },
+                Status = false,
+                Title = "title1",
+                userId = 1
+            }
+        };
+    }
+    
+    private void AddUserToTabel()
+    {
+        Recipes.Add(new Recipe()
+        {
+            Description = "Description",
+            Ingredients = null,
+            Id = 0,
+            Status = false,
+            Title = "Title",
+            userId = 0
+        });
+        StateHasChanged();
+    }
+
+}
