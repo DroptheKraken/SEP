@@ -19,6 +19,10 @@
         <Protobuf Include="Protos\users.proto" GRPCServices="Server">
             <Generator>MSBuild:Compile</Generator>
         </Protobuf>
+
+        <Protobuf Include="Protos\recipes.proto" GRPCServices="Server">
+          <Generator>MSBuild:Compile</Generator>
+        </Protobuf>
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\DaoInterfaces\DaoInterfaces.csproj" />
