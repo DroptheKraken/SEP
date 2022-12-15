@@ -1,74 +1,37 @@
+/* _content/BlazorAppTier1/Pages/AddRecipe.razor.rz.scp.css */
+.card[b-kht9qfx42l] {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 250px;
+    padding: 25px;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 15px;
+}
+
+.field[b-kht9qfx42l] {
+    margin-top: 20px;
+}
+
+.acceptbtn[b-kht9qfx42l] {
+    background-color: lightgreen;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.button-row[b-kht9qfx42l] {
+    margin-top: 15px;
+}
+
+.size[b-kht9qfx42l]
+{
+    position: absolute; top: 0; left: 0; height: 100%; width: 100%;
+}
+/* _content/BlazorAppTier1/Pages/Admin.razor.rz.scp.css */
 /* _content/BlazorAppTier1/Shared/MainLayout.razor.rz.scp.css */
-.page[b-qvllrcxqwe] {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-main[b-qvllrcxqwe] {
-    flex: 1;
-}
-
-.sidebar[b-qvllrcxqwe] {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
-}
-
-.top-row[b-qvllrcxqwe] {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
-    height: 3.5rem;
-    display: flex;
-    align-items: center;
-}
-
-    .top-row[b-qvllrcxqwe]  a, .top-row .btn-link[b-qvllrcxqwe] {
-        white-space: nowrap;
-        margin-left: 1.5rem;
-    }
-
-    .top-row a:first-child[b-qvllrcxqwe] {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-@media (max-width: 640.98px) {
-    .top-row:not(.auth)[b-qvllrcxqwe] {
-        display: none;
-    }
-
-    .top-row.auth[b-qvllrcxqwe] {
-        justify-content: space-between;
-    }
-
-    .top-row a[b-qvllrcxqwe], .top-row .btn-link[b-qvllrcxqwe] {
-        margin-left: 0;
-    }
-}
-
-@media (min-width: 641px) {
-    .page[b-qvllrcxqwe] {
-        flex-direction: row;
-    }
-
-    .sidebar[b-qvllrcxqwe] {
-        width: 250px;
-        height: 100vh;
-        position: sticky;
-        top: 0;
-    }
-
-    .top-row[b-qvllrcxqwe] {
-        position: sticky;
-        top: 0;
-        z-index: 1;
-    }
-
-    .top-row[b-qvllrcxqwe], article[b-qvllrcxqwe] {
-        padding-left: 2rem !important;
-        padding-right: 1.5rem !important;
-    }
-}
 /* _content/BlazorAppTier1/Shared/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-4oagloexvm] {
     background-color: rgba(255, 255, 255, 0.1);

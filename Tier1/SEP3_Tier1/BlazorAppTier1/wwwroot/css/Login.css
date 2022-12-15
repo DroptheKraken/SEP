@@ -1,0 +1,15 @@
+﻿.center-login
+{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.header-login
+{
+    font-size: 70px;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #553c9a, #b393d3);
+    color: transparent;
+    background-clip: content-box;
+    -webkit-background-clip: text;
+}

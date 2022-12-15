@@ -1,20 +1,35 @@
+using BlazorAppTier1.Auth;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using BlazorAppTier1.Data;
+using BlazorAppTier1.Services;
+using BlazorAppTier1.Services.Http;
+using HttpClients.ClientImpls;
+using HttpClients.ClientInterfaces;
+using Microsoft.AspNetCore.Components.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthProvider>();
+builder.Services.AddScoped(sp => new HttpClient());
+builder.Services.AddScoped<IAuthService, JwtAuthService>();
+builder.Services.AddHttpContextAccessor();
+
+
+
 builder.Services.AddScoped(sp => 
     new HttpClient
     {
-        BaseAddress = new Uri("https://localhost:8080")
+        BaseAddress = new Uri("https://localhost:7049")
     });
-
+builder.Services.AddScoped<IAuthService, JwtAuthService>();
+builder.Services.AddScoped<IUserInterface, UserHttpClient>();
+builder.Services.AddScoped<IRecipeInterface, RecipeHttpClient>();
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

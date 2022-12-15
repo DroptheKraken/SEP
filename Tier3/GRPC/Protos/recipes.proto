@@ -1,0 +1,25 @@
+﻿syntax = "proto3";
+option csharp_namespace = "GRPC";
+package protos;
+
+
+service RecipeFinder{
+  rpc GetRecipes (RecipeRequest) returns (RecipeResponse) {}
+  rpc AddRecipe (Recipe) returns (RecipeResponse) {}
+}
+message RecipeRequest
+{
+  string ingredient = 1;
+}
+message RecipeResponse
+{
+  repeated Recipe recipes = 1;
+}
+message Recipe
+{
+  int32 user_id = 1;
+  string name = 2;
+  string ingredients = 3;
+  string description = 4;
+  bool status = 5;
+}

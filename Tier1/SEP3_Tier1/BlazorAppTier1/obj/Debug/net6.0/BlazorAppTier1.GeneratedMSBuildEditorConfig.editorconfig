@@ -8,57 +8,89 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BlazorAppTier1
 build_property.RootNamespace = BlazorAppTier1
-build_property.ProjectDir = C:\Users\Andi\IdeaProjects\SEP\Tier1\SEP3_Tier1\BlazorAppTier1\
+build_property.ProjectDir = D:\VIA\SemesterProject\Tier1\SEP3_Tier1\BlazorAppTier1\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Andi\IdeaProjects\SEP\Tier1\SEP3_Tier1\BlazorAppTier1
+build_property.MSBuildProjectDirectory = D:\VIA\SemesterProject\Tier1\SEP3_Tier1\BlazorAppTier1
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Andi/IdeaProjects/SEP/Tier1/SEP3_Tier1/BlazorAppTier1/App.razor]
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Andi/IdeaProjects/SEP/Tier1/SEP3_Tier1/BlazorAppTier1/Pages/CallWebAPI.razor]
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/Pages/CallWebAPI.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FsbFdlYkFQSS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Andi/IdeaProjects/SEP/Tier1/SEP3_Tier1/BlazorAppTier1/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Andi/IdeaProjects/SEP/Tier1/SEP3_Tier1/BlazorAppTier1/Pages/FetchData.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Andi/IdeaProjects/SEP/Tier1/SEP3_Tier1/BlazorAppTier1/Pages/Index.razor]
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Andi/IdeaProjects/SEP/Tier1/SEP3_Tier1/BlazorAppTier1/Shared/SurveyPrompt.razor]
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/Pages/LoginButton.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5CdXR0b24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/Pages/RecipePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVjaXBlUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/Shared/LoginLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/Shared/RecipeLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFJlY2lwZUxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/Shared/RegisterLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFJlZ2lzdGVyTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/Shared/ShowRecipeLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFNob3dSZWNpcGVMYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Andi/IdeaProjects/SEP/Tier1/SEP3_Tier1/BlazorAppTier1/_Imports.razor]
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Andi/IdeaProjects/SEP/Tier1/SEP3_Tier1/BlazorAppTier1/Shared/MainLayout.razor]
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/Pages/AddRecipe.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUmVjaXBlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-kht9qfx42l
+
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/Pages/Admin.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-48lqx16y00
+
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-qvllrcxqwe
 
-[C:/Users/Andi/IdeaProjects/SEP/Tier1/SEP3_Tier1/BlazorAppTier1/Shared/NavMenu.razor]
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-4oagloexvm
 
-[C:/Users/Andi/IdeaProjects/SEP/Tier1/SEP3_Tier1/BlazorAppTier1/Pages/Error.cshtml]
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Andi/IdeaProjects/SEP/Tier1/SEP3_Tier1/BlazorAppTier1/Pages/_Host.cshtml]
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Andi/IdeaProjects/SEP/Tier1/SEP3_Tier1/BlazorAppTier1/Pages/_Layout.cshtml]
+[D:/VIA/SemesterProject/Tier1/SEP3_Tier1/BlazorAppTier1/Pages/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

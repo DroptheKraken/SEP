@@ -1,20 +1,165 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\BlazorAppTier1.csproj": {}
+    "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\BlazorAppTier1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\BlazorAppTier1.csproj": {
+    "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\BlazorAppTier1.csproj",
-        "projectName": "BlazorAppTier1",
-        "projectPath": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\BlazorAppTier1.csproj",
-        "packagesPath": "C:\\Users\\Andi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andi\\IdeaProjects\\SEP\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\obj\\",
+        "projectUniqueName": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\alexc\\.nuget\\packages\\",
+        "outputPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Andi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\alexc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\BlazorAppTier1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\BlazorAppTier1.csproj",
+        "projectName": "BlazorAppTier1",
+        "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\BlazorAppTier1.csproj",
+        "packagesPath": "C:\\Users\\alexc\\.nuget\\packages\\",
+        "outputPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\BlazorAppTier1\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\alexc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Application\\Application.csproj": {
+                "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Application\\Application.csproj"
+              },
+              "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Domain\\Domain.csproj"
+              },
+              "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\FileData\\FileData.csproj": {
+                "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\FileData\\FileData.csproj"
+              },
+              "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\HttpClients\\HttpClients.csproj": {
+                "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\HttpClients\\HttpClients.csproj"
+              },
+              "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\WebApi\\WebApi.csproj": {
+                "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\WebApi\\WebApi.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authorization": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\alexc\\.nuget\\packages\\",
+        "outputPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\alexc\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -37,6 +182,228 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authorization": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\FileData\\FileData.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\FileData\\FileData.csproj",
+        "projectName": "FileData",
+        "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\FileData\\FileData.csproj",
+        "packagesPath": "C:\\Users\\alexc\\.nuget\\packages\\",
+        "outputPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\FileData\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\alexc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Application\\Application.csproj": {
+                "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Application\\Application.csproj"
+              },
+              "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\HttpClients\\HttpClients.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\HttpClients\\HttpClients.csproj",
+        "projectName": "HttpClients",
+        "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\HttpClients\\HttpClients.csproj",
+        "packagesPath": "C:\\Users\\alexc\\.nuget\\packages\\",
+        "outputPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\HttpClients\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\alexc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Application\\Application.csproj": {
+                "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Application\\Application.csproj"
+              },
+              "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\WebApi\\WebApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\WebApi\\WebApi.csproj",
+        "projectName": "WebApi",
+        "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\WebApi\\WebApi.csproj",
+        "packagesPath": "C:\\Users\\alexc\\.nuget\\packages\\",
+        "outputPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\WebApi\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\alexc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Application\\Application.csproj": {
+                "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Application\\Application.csproj"
+              },
+              "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\Domain\\Domain.csproj"
+              },
+              "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\FileData\\FileData.csproj": {
+                "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\FileData\\FileData.csproj"
+              },
+              "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\HttpClients\\HttpClients.csproj": {
+                "projectPath": "D:\\VIA\\SemesterProject\\Tier1\\SEP3_Tier1\\HttpClients\\HttpClients.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -56,7 +423,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

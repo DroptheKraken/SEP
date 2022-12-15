@@ -1,49 +1,55 @@
 package via.sep3.controller;
 
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import protos.RecipeFinderGrpc;
+import protos.RecipeRequest;
 import via.sep3.model.Recipe;
-import via.sep3.repository.RecipeRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/recipes/v1")
 public class RecipeController
 {
-    private RecipeRepository recipeRepository;
-
-    public RecipeController(RecipeRepository recipeRepository)
-    {
-        this.recipeRepository = recipeRepository;
-    }
 
     @RequestMapping(value = "/recipe", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public void saveRecipe(Recipe recipe)
-    {
-        recipeRepository.saveRecipe(recipe);
+    public Recipe saveRecipe(@RequestBody Recipe recipe)
+    {System.out.println(recipe.getName());
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 5001)
+                .usePlaintext()
+                .build();
+
+        RecipeFinderGrpc.RecipeFinderBlockingStub stub
+                = RecipeFinderGrpc.newBlockingStub(channel);
+
+        stub.addRecipe(GRPCconverter.getGrpcRecipeFromRecipe(recipe));
+        return recipe;
     }
 
     // R --> read (get)
-    @RequestMapping(value = "/recipe/{ingredient}",
+    @RequestMapping(value = "/recipe/{ingredients}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public ArrayList<Recipe>  getRecipeByIngredient(@PathVariable String ingredient)
+    public List<Recipe> getRecipeByIngredient(@PathVariable String ingredients)
     {
-        return recipeRepository.getByIngredient(ingredient);
+
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 5001)
+                .usePlaintext()
+                .build();
+
+        RecipeFinderGrpc.RecipeFinderBlockingStub stub
+                = RecipeFinderGrpc.newBlockingStub(channel);
+        RecipeRequest recipeRequest = RecipeRequest.newBuilder()
+                .setIngredient(ingredients)
+                .build();
+
+        return GRPCconverter.getRecipeFromRecipeResponese(stub.getRecipes(recipeRequest));
     }
 
-    //get all recipes
-    @RequestMapping(value = "/recipes",
-            method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
-    public String getAllRecipes()
-    {
-        return recipeRepository.getAllRecipes();
-    }
 }
 

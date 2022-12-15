@@ -1,0 +1,87 @@
+﻿@page "/Register"
+@using Domain.DTOs
+@using HttpClients.ClientInterfaces
+@inject IUserInterface userService
+@using global::Domain.DTOs
+@inject NavigationManager NavManager
+@using BlazorAppTier1.Services
+@layout RegisterLayout
+
+<CascadingAuthenticationState>
+    <AuthorizeView>
+        <NotAuthorized>
+
+            <div class="mx-5 my-3 flex justify-between text-sm font-semibold underline underline-offset-2" @onclick="Home">
+                <div>
+                    <button>Go to Home</button>
+                </div>
+            </div>
+            <!-- component -->
+            <div class="mx-auto my-36 flex h-[300px] w-[350px] flex-col border-2 bg-white text-black shadow-xl">
+                <div class="mx-8 mt-7 mb-1 flex flex-row justify-start space-x-2">
+                    <div class="h-7 w-3 bg-[#ffcc00]"></div>
+                    <div class="w-3 text-center font-sans text-xl font-bold">
+                        <h1>Register</h1>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <input class="my-2 w-72 border p-2" type="email" placeholder="Username" @bind="userName"/>
+                </div>
+                <div class="flex flex-col items-center">
+                    <input class="my-2 w-72 border p-2" type="password" placeholder="Password" @bind="password"/>
+                </div>
+                @if (!string.IsNullOrEmpty(resultMsg))
+                {
+                    <div class="field">
+                        <label style="color: Green">
+                            @resultMsg
+                        </label>
+                    </div>
+                }
+                <div class="my-2 flex justify-center">
+                    <button class="w-72 border bg-[#ffcc00] p-2 font-sans" @onclick="Create">Create</button>
+                </div>
+
+            </div>
+        </NotAuthorized>
+        <Authorized>
+            <div class="card">
+                <h3>Hello, @context.User.Identity.Name</h3>
+            </div>
+        </Authorized>
+    </AuthorizeView>
+</CascadingAuthenticationState>
+
+@code {
+    private string userName = "";
+    private string password = "";
+    private string resultMsg = "";
+    private string color = "";
+
+    private async Task Create()
+    {
+        resultMsg = "";
+
+        try
+        {
+            await userService.Create(new UserCreationDto(userName, password));
+            userName = "";
+            resultMsg = "User successfully created";
+            color = "green";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            resultMsg = e.Message;
+        }
+    @code
+    {
+        private void Home()
+        {
+            NavManager.NavigateTo("/Home");
+        }
+    }}
+
+}
+    
+}

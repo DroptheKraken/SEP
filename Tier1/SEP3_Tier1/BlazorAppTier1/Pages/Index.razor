@@ -1,9 +1,22 @@
 ﻿@page "/"
+@using BlazorAppTier1.Services
+@inject IAuthService AuthService
+@inject NavigationManager NavManager
+
+<PageTitle>Home</PageTitle>
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+@code
+{
+  private void Login()
+  {
+    NavManager.NavigateTo("/Login");
+  }
 
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?"/>
+  private async Task Logout()
+  {
+    await AuthService.LogoutAsync();
+    NavManager.NavigateTo("/");
+  }
+}
