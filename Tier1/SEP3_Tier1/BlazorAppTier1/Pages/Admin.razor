@@ -1,16 +1,17 @@
 ﻿@page "/Admin"
 @using BlazorAppTier1.Services
 @using Domain.Models
+@using Application.Logic
 @inject IAuthService AuthService
 @inject NavigationManager NavManager
 @layout LoginLayout
 
-<rel src="~/css/Admin.css" />
-<h3 class="header-login" >Admin</h3>
+<rel src="~/css/Admin.css"/>
+<h3 class="header-login">Admin</h3>
 <!-- component -->
 <CascadingAuthenticationState>
     <AuthorizeView Policy="admin">
-       
+
         <div class="text-gray-900 bg-gray-200">
             <div class="p-4 flex">
                 <h1 class="text-3xl">
@@ -28,12 +29,17 @@
                         <th class="text-left p-3 px-5">Status</th>
                         <th class="text-left p-3 px-5">Response</th>
                     </tr>
-                    @foreach (var recipe in Recipes)
+                    @foreach (var recipe in requestedRecipes)
                     {
                         <tr class="border-b hover:bg-orange-100">
                             <td class="p-3 px-5">@recipe.Title</td>
                             <td class="p-3 px-5">@recipe.Description</td>
-                            <td class="p-3 px-5">@recipe.Ingredients</td>
+                            <td class="p-3 px-5">
+                            @for (int i = 0; i < @recipe.Ingredients.Length; i++)
+                            {
+                                <span>@recipe.Ingredients[i], </span>
+                            }
+                            </td>
                             <td class="p-3 px-5">@recipe.userId</td>
                             <td class="p-3 px-5">@recipe.Status</td>
                             <td class="p-3 px-5">
@@ -55,35 +61,17 @@
 
 @code {
     private List<Recipe> Recipes;
-    
-    protected override void OnInitialized()
+    List<Recipe> requestedRecipes = new List<Recipe>();
+
+    protected override async Task OnInitializedAsync()
     {
         base.OnInitialized();
     // Initialize collection of items get it from some service or contextList<Recipe> Recipes = new List<Recipe>();
-        Recipes = new List<Recipe>()
-        {
-            new()
-            {
-                Description= "description",
-                Id = 0,
-                Ingredients = new[] { "ingredient1", "ingredient2" },
-                Status = false,
-                Title = "title",
-                userId = 0
-            },
-            new ()
-            {
-                Description= "description",
-                Id = 1,
-                Ingredients = new[] { "ingredient1", "ingredient2" },
-                Status = false,
-                Title = "title",
-                userId = 1
-            },
-           
-        };
+        Recipes = new List<Recipe>();
+        Recipes = await Connection.FetchRecipeAsync();
+        requestedRecipes = Recipes.Where(x => x.Status.Equals(false)).ToList();
     }
-    
+
     private void AddUserToTabel()
     {
         Recipes.Add(new Recipe()

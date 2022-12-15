@@ -55,7 +55,7 @@ public class UserController
                 = UserService1Grpc.newBlockingStub(channel);
 
         protos.Username request = protos.Username.newBuilder().setUserName(username).build();
-
+        System.out.println(GRPCconverter.getUserFromGrpcUser(stub.getUser(request)));
         return GRPCconverter.getUserFromGrpcUser(stub.getUser(request));
 
     }

@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 option java_multiple_files = true;
 option java_package = "protos";
 
@@ -6,6 +7,7 @@ option java_package = "protos";
 service RecipeFinder{
   rpc GetRecipes (RecipeRequest) returns (RecipeResponse) {}
   rpc AddRecipe (Recipe) returns (RecipeResponse) {}
+  rpc GetLikedRecipes (UserObject) returns (RecipeResponse) {}
 }
 message RecipeRequest
 {
@@ -23,3 +25,12 @@ message Recipe
   string description = 4;
   bool status = 5;
 }
+message UserObject
+{
+  int32 id = 1;
+  string username = 2;
+  string password = 3;
+  string email = 4;
+  string role = 5;
+}
+
