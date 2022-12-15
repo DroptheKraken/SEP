@@ -11,7 +11,7 @@ public final class RecipeFinderGrpc {
 
   private RecipeFinderGrpc() {}
 
-  public static final String SERVICE_NAME = "RecipeFinder";
+  public static final String SERVICE_NAME = "protos.RecipeFinder";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<protos.RecipeRequest,
