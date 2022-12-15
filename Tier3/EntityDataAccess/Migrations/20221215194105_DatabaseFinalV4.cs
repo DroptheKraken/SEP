@@ -6,7 +6,7 @@ namespace EntityDataAccess.Migrations
 {
     public partial class DatabaseFinalV4 : Migration
     {
-        protected override void Up(MigrationBuilder migrationBuilder)
+        protected   override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropIndex(
                 name: "IX_Ratings_RatedByUserId",
