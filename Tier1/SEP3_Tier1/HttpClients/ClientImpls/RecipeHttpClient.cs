@@ -1,5 +1,7 @@
-﻿using System.Net.Http.Json;
+﻿using System.Data;
+using System.Net.Http.Json;
 using Domain.DTOs;
+using Domain.Models;
 using HttpClients.ClientInterfaces;
 
 namespace HttpClients.ClientImpls;
@@ -14,14 +16,10 @@ public class RecipeHttpClient : IRecipeInterface
     }
 
 
-    public async Task CreateAsync(RecipeCreationDto dto)
+    public async Task<Recipe> CreateAsync(RecipeCreationDto dto)
     {
-        HttpResponseMessage response = await client.PostAsJsonAsync("/todos", dto);
-        if (!response.IsSuccessStatusCode)
-        {
-            string content = await response.Content.ReadAsStringAsync();
-            throw new Exception(content);
-        }
-
+        Recipe recipe = await Connection.CreateRecipe(dto.Title,dto.Description,dto.Ingredients);
+       
+        return recipe;
     }
 }
