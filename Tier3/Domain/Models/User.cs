@@ -17,7 +17,7 @@ public class User
     public string? Email { get;  set; }
     [Column("Role")]
     public string? Role { get;  set; }
-    
+    [Column("LikedRecipes")]
     public string LikedRecipesIds { get;  set; }
 
     public User()
