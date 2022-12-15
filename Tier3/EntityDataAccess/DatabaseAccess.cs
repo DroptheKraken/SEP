@@ -44,11 +44,7 @@ public class DatabaseAccess : DbContext
         // Constraints, Primary keys, Foreign keys, etc.
         // User
         modelBuilder.Entity<User>().HasKey(user => user.Id);
-        modelBuilder.Entity<User>()
-            .HasOne(rating => rating.Rating)
-            .WithOne(user => user.RatedByUser)
-            .HasForeignKey<Rating>(request => request.RatedByUserId);
-
+        
         // Recipe  
         modelBuilder.Entity<Recipe>().HasKey(recipe => recipe.Id);
         modelBuilder.Entity<Recipe>().HasMany(rating => rating.Ratings);

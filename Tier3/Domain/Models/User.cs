@@ -18,16 +18,8 @@ public class User
     [Column("Role")]
     public string? Role { get;  set; }
     
-    [Column("PostedRecipes")]
-    public List<RecipeRequest>? PostedRecipes { get; set; } // RecipeRequests that have been approved by the admin, bool = true
+    public string LikedRecipesIds { get;  set; }
 
-    public new int RecipeRequestId = new Recipe().Id;
-
-
-    [ForeignKey(nameof(Models.Rating.RatingId))]
-    public int RatingId { get; set; }
-    public Rating Rating { get; set; }
-    
     public User()
     {
     }
