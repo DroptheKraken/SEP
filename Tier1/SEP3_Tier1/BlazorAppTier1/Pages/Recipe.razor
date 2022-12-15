@@ -10,24 +10,27 @@
  <table class='table'>
         <thead>
             <tr>
-                <th>EmpID</th>
-                <th>EmpName</th>
-                <th>EmpCountry</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Ingrdients</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var emp in branches)
             {
                 <tr>
-                    <td>@emp.Title</td>
+                  
+                    <td>@emp.Title<input type='button' style='width:100%; height:100%;border: 2px solid black' value="Like Recipe"/></td>
                     <td>@emp.Description</td>
-                    <td >@for (int i = 0; i < @emp.Ingredients.Length; i++)
-                         {
+                    <td >
+                        @for (int i = 0; i < @emp.Ingredients.Length; i++)
+                        {
 
-                             <span>@emp.Ingredients[i], </span>
-                             
-                         }             </td>
-                   
+                            <span>@emp.Ingredients[i], </span>
+
+                        }
+                    </td>
+
                 </tr>
             }
         </tbody>
