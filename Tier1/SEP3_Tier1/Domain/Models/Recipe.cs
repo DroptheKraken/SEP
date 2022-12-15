@@ -16,7 +16,7 @@ public class Recipe
     [JsonPropertyName("ingridient")]
     public string[] Ingredients { get; set; }
     
-    public int Status { get; set; }
+    public bool Status { get; set; }
 
 
     public override string ToString()

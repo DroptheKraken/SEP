@@ -2,22 +2,22 @@
   "Users": [
     {
       "Id": 1,
-      "UserName": "string",
+      "username": "string",
       "Password": "string"
     },
     {
       "Id": 2,
-      "UserName": "alex",
+      "username": "alex",
       "Password": "alex"
     },
     {
       "Id": 3,
-      "UserName": "andi",
+      "username": "andi",
       "Password": "andi"
     },
     {
       "Id": 4,
-      "UserName": "andrei",
+      "username": "andrei",
       "Password": "pula"
     }
   ]

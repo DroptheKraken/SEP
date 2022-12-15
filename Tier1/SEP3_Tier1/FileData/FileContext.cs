@@ -44,7 +44,9 @@ public class FileContext
         }
 
         string content = File.ReadAllText(filePath);
+        
         dataContainer = JsonSerializer.Deserialize<DataContainer>(content);
+        Console.WriteLine(dataContainer.Users.ToString());
     }
 
     
