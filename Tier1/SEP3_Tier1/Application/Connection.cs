@@ -57,7 +57,7 @@ public class Connection
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             PropertyNameCaseInsensitive = true
         });
-        Console.WriteLine(user +" Connection ");
+        Console.WriteLine(user + " Connection ");
 
         return user;
     }
@@ -119,7 +119,7 @@ public class Connection
         string result = await responseMessage.Content.ReadAsStringAsync();
         Console.WriteLine(result);
 
-       List<User>  user = JsonSerializer.Deserialize<List<User>>(result, new JsonSerializerOptions
+        List<User> user = JsonSerializer.Deserialize<List<User>>(result, new JsonSerializerOptions
         {
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         });
@@ -194,5 +194,41 @@ public class Connection
         Console.WriteLine(recipe);
 
         return recipe;
+    }
+
+    public static async Task<List<Recipe>> UpdateRecipe(Recipe recipe)
+    {
+        HttpClientHandler clientHandler = new HttpClientHandler();
+
+        clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) =>
+        {
+            return true;
+        };
+        using HttpClient client = new HttpClient(clientHandler);
+       recipe.Status =true;
+
+        var data = new StringContent(
+            JsonSerializer.Serialize(recipe,
+                new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase }), Encoding.UTF8,
+            "application/json");
+        HttpResponseMessage responseMessage =
+            await client.PutAsync($"http://localhost:8080/recipes/v1/recipe/{recipe.Title}", data);
+
+        if (!responseMessage.IsSuccessStatusCode)
+        {
+            throw new Exception(responseMessage.StatusCode.ToString());
+        }
+
+        string result = await responseMessage.Content.ReadAsStringAsync();
+        Console.WriteLine(result);
+
+        List<Recipe> recipe1 = JsonSerializer.Deserialize<List<Recipe>>(result, new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            PropertyNameCaseInsensitive = true
+        });
+        Console.WriteLine(recipe1);
+
+        return recipe1;
     }
 }

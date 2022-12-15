@@ -8,6 +8,7 @@ service RecipeFinder{
   rpc GetRecipes (RecipeRequest) returns (RecipeResponse) {}
   rpc AddRecipe (Recipe) returns (RecipeResponse) {}
   rpc GetLikedRecipes (UserObject) returns (RecipeResponse) {}
+  rpc UpdateRecipe (Recipe) returns (RecipeResponse) {}
 }
 message RecipeRequest
 {

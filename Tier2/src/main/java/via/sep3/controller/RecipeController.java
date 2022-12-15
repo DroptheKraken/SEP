@@ -18,7 +18,8 @@ public class RecipeController
     @RequestMapping(value = "/recipe", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Recipe saveRecipe(@RequestBody Recipe recipe)
-    {System.out.println(recipe.getName());
+    {
+        System.out.println(recipe.getName());
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 5001)
                 .usePlaintext()
                 .build();
@@ -50,25 +51,43 @@ public class RecipeController
 
         return GRPCconverter.getRecipeFromRecipeResponese(stub.getRecipes(recipeRequest));
     }
+
     @RequestMapping(value = "/recipes",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public List<Recipe>getAllRecipes()
+    public List<Recipe> getAllRecipes()
     {
 
-            ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 5001)
-                    .usePlaintext()
-                    .build();
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 5001)
+                .usePlaintext()
+                .build();
 
-            RecipeFinderGrpc.RecipeFinderBlockingStub stub
-                    = RecipeFinderGrpc.newBlockingStub(channel);
-            RecipeRequest recipeRequest = RecipeRequest.newBuilder()
-                    .setIngredient("")
-                    .build();
+        RecipeFinderGrpc.RecipeFinderBlockingStub stub
+                = RecipeFinderGrpc.newBlockingStub(channel);
+        RecipeRequest recipeRequest = RecipeRequest.newBuilder()
+                .setIngredient("")
+                .build();
 
-            return GRPCconverter.getRecipeFromRecipeResponese(stub.getRecipes(recipeRequest));
+        return GRPCconverter.getRecipeFromRecipeResponese(stub.getRecipes(recipeRequest));
     }
 
+    //update
+    @RequestMapping(value = "/recipe/{name}",
+            method = RequestMethod.PUT,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public List<Recipe> updateRecipe(@RequestBody Recipe recipe)
+    {
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 5001)
+                .usePlaintext()
+                .build();
+
+        RecipeFinderGrpc.RecipeFinderBlockingStub stub
+                = RecipeFinderGrpc.newBlockingStub(channel);
+        protos.Recipe recipe1 = GRPCconverter.getGrpcRecipeFromRecipe(recipe);
+        return GRPCconverter.getRecipeFromRecipeResponese(stub.updateRecipe(recipe1));
+
+    }
 }
 

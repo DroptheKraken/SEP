@@ -64,4 +64,29 @@ public class RecipeService : RecipeFinder.RecipeFinderBase
         _databaseAccess.SaveChanges();
         return Task.FromResult(response);
     }
+
+    public override Task<RecipeResponse> UpdateRecipe(Recipe request, ServerCallContext context)
+    {request.Status = true;
+        RecipeResponse response = new RecipeResponse();
+foreach (var VARIABLE in _databaseAccess.Recipes)
+        {
+            if (VARIABLE.Title == request.Name)
+            {
+                VARIABLE.Description = request.Description;
+                VARIABLE.Ingredients = request.Ingredients;
+                VARIABLE.Status = request.Status;
+                response.Recipes.Add(new Recipe()
+                {
+                    Name = VARIABLE.Title,
+                    Description = VARIABLE.Description,
+                    Ingredients = VARIABLE.Ingredients,
+                    Status = VARIABLE.Status
+                });
+            }
+        }
+       
+
+        _databaseAccess.SaveChanges();
+        return Task.FromResult(response);
+    }
 }

@@ -76,6 +76,68 @@ public final class RecipeFinderGrpc {
     return getAddRecipeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<protos.UserObject,
+      protos.RecipeResponse> getGetLikedRecipesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetLikedRecipes",
+      requestType = protos.UserObject.class,
+      responseType = protos.RecipeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<protos.UserObject,
+      protos.RecipeResponse> getGetLikedRecipesMethod() {
+    io.grpc.MethodDescriptor<protos.UserObject, protos.RecipeResponse> getGetLikedRecipesMethod;
+    if ((getGetLikedRecipesMethod = RecipeFinderGrpc.getGetLikedRecipesMethod) == null) {
+      synchronized (RecipeFinderGrpc.class) {
+        if ((getGetLikedRecipesMethod = RecipeFinderGrpc.getGetLikedRecipesMethod) == null) {
+          RecipeFinderGrpc.getGetLikedRecipesMethod = getGetLikedRecipesMethod =
+              io.grpc.MethodDescriptor.<protos.UserObject, protos.RecipeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLikedRecipes"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  protos.UserObject.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  protos.RecipeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new RecipeFinderMethodDescriptorSupplier("GetLikedRecipes"))
+              .build();
+        }
+      }
+    }
+    return getGetLikedRecipesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<protos.Recipe,
+      protos.RecipeResponse> getUpdateRecipeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateRecipe",
+      requestType = protos.Recipe.class,
+      responseType = protos.RecipeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<protos.Recipe,
+      protos.RecipeResponse> getUpdateRecipeMethod() {
+    io.grpc.MethodDescriptor<protos.Recipe, protos.RecipeResponse> getUpdateRecipeMethod;
+    if ((getUpdateRecipeMethod = RecipeFinderGrpc.getUpdateRecipeMethod) == null) {
+      synchronized (RecipeFinderGrpc.class) {
+        if ((getUpdateRecipeMethod = RecipeFinderGrpc.getUpdateRecipeMethod) == null) {
+          RecipeFinderGrpc.getUpdateRecipeMethod = getUpdateRecipeMethod =
+              io.grpc.MethodDescriptor.<protos.Recipe, protos.RecipeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateRecipe"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  protos.Recipe.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  protos.RecipeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new RecipeFinderMethodDescriptorSupplier("UpdateRecipe"))
+              .build();
+        }
+      }
+    }
+    return getUpdateRecipeMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -138,6 +200,20 @@ public final class RecipeFinderGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAddRecipeMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void getLikedRecipes(protos.UserObject request,
+        io.grpc.stub.StreamObserver<protos.RecipeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetLikedRecipesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void updateRecipe(protos.Recipe request,
+        io.grpc.stub.StreamObserver<protos.RecipeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateRecipeMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -154,6 +230,20 @@ public final class RecipeFinderGrpc {
                 protos.Recipe,
                 protos.RecipeResponse>(
                   this, METHODID_ADD_RECIPE)))
+          .addMethod(
+            getGetLikedRecipesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                protos.UserObject,
+                protos.RecipeResponse>(
+                  this, METHODID_GET_LIKED_RECIPES)))
+          .addMethod(
+            getUpdateRecipeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                protos.Recipe,
+                protos.RecipeResponse>(
+                  this, METHODID_UPDATE_RECIPE)))
           .build();
     }
   }
@@ -187,6 +277,22 @@ public final class RecipeFinderGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAddRecipeMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getLikedRecipes(protos.UserObject request,
+        io.grpc.stub.StreamObserver<protos.RecipeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetLikedRecipesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateRecipe(protos.Recipe request,
+        io.grpc.stub.StreamObserver<protos.RecipeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateRecipeMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -215,6 +321,20 @@ public final class RecipeFinderGrpc {
     public protos.RecipeResponse addRecipe(protos.Recipe request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAddRecipeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public protos.RecipeResponse getLikedRecipes(protos.UserObject request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLikedRecipesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public protos.RecipeResponse updateRecipe(protos.Recipe request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRecipeMethod(), getCallOptions(), request);
     }
   }
 
@@ -247,10 +367,28 @@ public final class RecipeFinderGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAddRecipeMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<protos.RecipeResponse> getLikedRecipes(
+        protos.UserObject request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetLikedRecipesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<protos.RecipeResponse> updateRecipe(
+        protos.Recipe request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateRecipeMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_RECIPES = 0;
   private static final int METHODID_ADD_RECIPE = 1;
+  private static final int METHODID_GET_LIKED_RECIPES = 2;
+  private static final int METHODID_UPDATE_RECIPE = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -275,6 +413,14 @@ public final class RecipeFinderGrpc {
           break;
         case METHODID_ADD_RECIPE:
           serviceImpl.addRecipe((protos.Recipe) request,
+              (io.grpc.stub.StreamObserver<protos.RecipeResponse>) responseObserver);
+          break;
+        case METHODID_GET_LIKED_RECIPES:
+          serviceImpl.getLikedRecipes((protos.UserObject) request,
+              (io.grpc.stub.StreamObserver<protos.RecipeResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_RECIPE:
+          serviceImpl.updateRecipe((protos.Recipe) request,
               (io.grpc.stub.StreamObserver<protos.RecipeResponse>) responseObserver);
           break;
         default:
@@ -340,6 +486,8 @@ public final class RecipeFinderGrpc {
               .setSchemaDescriptor(new RecipeFinderFileDescriptorSupplier())
               .addMethod(getGetRecipesMethod())
               .addMethod(getAddRecipeMethod())
+              .addMethod(getGetLikedRecipesMethod())
+              .addMethod(getUpdateRecipeMethod())
               .build();
         }
       }

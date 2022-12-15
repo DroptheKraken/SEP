@@ -43,7 +43,7 @@
                             <td class="p-3 px-5">@recipe.userId</td>
                             <td class="p-3 px-5">@recipe.Status</td>
                             <td class="p-3 px-5">
-                                <button type="button" class="btn btn-primary">Accept</button>
+                                <button type="button" class="btn btn-primary" @onclick="@(()=> AcceptRecipe(@recipe))">Accept</button>
                                 <button type="button" class="btn btn-primary">Decline</button>
                             </td>
                         </tr>
@@ -85,5 +85,12 @@
         });
         StateHasChanged();
     }
+    private async void AcceptRecipe(Recipe recipe)
+    {
+        Recipes = await Connection.UpdateRecipe(recipe);
+        /*return requestedRecipes.FirstOrDefault(x => x.Id == recipe.Id);*/
+        requestedRecipes.Remove(recipe);
+    }
+    
 
 }
