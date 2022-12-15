@@ -13,6 +13,8 @@ public class User
     [JsonPropertyName("username")]
     public string UserName { get; set; }
     public string Password { get; set; }
+    [JsonPropertyName("role")]
+    public string Role { get; set; }
     
     public override string ToString()
     {

@@ -15,7 +15,7 @@ public class AuthService : IAuthService
         {
             
             Task<User> user = Connection.FetchUser(username);
-            
+            Console.WriteLine(user.Result +" authservice");
             User existingUser = user.Result;
             
             if (existingUser == null)

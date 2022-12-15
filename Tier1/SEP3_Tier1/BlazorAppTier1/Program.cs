@@ -4,9 +4,12 @@ using Microsoft.AspNetCore.Components.Web;
 using BlazorAppTier1.Data;
 using BlazorAppTier1.Services;
 using BlazorAppTier1.Services.Http;
+using Domain.Auth;
 using HttpClients.ClientImpls;
 using HttpClients.ClientInterfaces;
+
 using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,7 +23,7 @@ builder.Services.AddHttpContextAccessor();
 
 
 
-builder.Services.AddScoped(sp => 
+builder.Services.AddScoped(sp =>
     new HttpClient
     {
         BaseAddress = new Uri("https://localhost:7049")
@@ -28,6 +31,7 @@ builder.Services.AddScoped(sp =>
 builder.Services.AddScoped<IAuthService, JwtAuthService>();
 builder.Services.AddScoped<IUserInterface, UserHttpClient>();
 builder.Services.AddScoped<IRecipeInterface, RecipeHttpClient>();
+AuthorizaztionPolicies.AddPolicies(builder.Services);
 var app = builder.Build();
 
 
@@ -49,3 +53,4 @@ app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
 app.Run();
+

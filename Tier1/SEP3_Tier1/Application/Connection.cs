@@ -54,9 +54,10 @@ public class Connection
 
         User user = JsonSerializer.Deserialize<User>(result, new JsonSerializerOptions
         {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            PropertyNameCaseInsensitive = true
         });
-        Console.WriteLine(user);
+        Console.WriteLine(user +" Connection ");
 
         return user;
     }
