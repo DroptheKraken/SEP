@@ -1,5 +1,6 @@
 ﻿using Domain.Models;
 using EntityDataAccess;
+using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -65,6 +66,32 @@ public class UserService : UserService1.UserService1Base
         catch (Exception e)
         {
             Console.WriteLine(e.Message + "\n\n\n");
+            throw new RpcException(new Status(StatusCode.NotFound, e.Message));
+        }
+    }
+    public override Task GetUsers(Empty request, IServerStreamWriter<UserObj> responseStream, ServerCallContext context)
+    {
+        try
+        {
+            _databaseAccess = new DatabaseAccess();
+            List<User> users = _databaseAccess.Users.ToList();
+            foreach (User user in users)
+            {
+                UserObj userToSend = new UserObj()
+                {
+                    Id = user.Id,
+                    Username = user.Username,
+                    Password = user.Password,
+                    Email = user.Email,
+                    Role = user.Role
+                };
+                responseStream.WriteAsync(userToSend);
+            }
+            Console.WriteLine("Users found");
+            return Task.FromResult(0);
+        }
+        catch (Exception e)
+        {
             throw new RpcException(new Status(StatusCode.NotFound, e.Message));
         }
     }

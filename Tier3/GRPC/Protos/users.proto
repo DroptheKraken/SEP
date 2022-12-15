@@ -5,6 +5,7 @@ package protos;
 service UserService1 {
   rpc AddUser (UserObj) returns (UserObj);
   rpc GetUser (Username) returns (UserObj);
+  rpc GetUsers (Empty) returns (stream UserObj);
 }
 
 
@@ -20,3 +21,4 @@ message UserObj {
 message Username {
   string userName = 1;
 }
+message Empty {}
