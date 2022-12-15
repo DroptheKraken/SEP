@@ -3,48 +3,55 @@
 @using HttpClients.ClientInterfaces
 @inject IUserInterface userService
 @using global::Domain.DTOs
+@inject NavigationManager NavManager
 @using BlazorAppTier1.Services
 @layout RegisterLayout
-<h3>Register</h3>
-
 
 <CascadingAuthenticationState>
-<AuthorizeView>
-    <NotAuthorized>
-        <div class="card">
-            <h3>Register</h3>
-            <div class="field">
-                <label >
-                    <span class=" oi oi-person"> Username: </span>
-                </label>
-                <input type="text" @bind="userName"/>
-            </div>
-            <div class="field">
-                <label style="text-align: center ; padding: 4px">
-                    <span class=" oi oi-lock-locked"> Password: </span>
-                </label>
-                <input type="password" @bind="password"/>
-            </div>
-            @if (!string.IsNullOrEmpty(resultMsg))
-            {
-                <div class="field">
-                    <label style="color: red">
-                        @resultMsg</label>
-                </div>
-            }
+    <AuthorizeView>
+        <NotAuthorized>
 
-            <div class="field">
-                <button class="loginbtn" title="Register" @onclick="Create">Register <span class="oi oi-key"></span></button>
+            <div class="mx-5 my-3 flex justify-between text-sm font-semibold underline underline-offset-2" @onclick="Home">
+                <div>
+                    <button>Go to Home</button>
+                </div>
             </div>
-        </div>
-    </NotAuthorized>
-    <Authorized>
-        <div class="card">
-            <h3>Hello, @context.User.Identity.Name</h3>
-        </div>
-    </Authorized>
-</AuthorizeView>
+            <!-- component -->
+            <div class="mx-auto my-36 flex h-[300px] w-[350px] flex-col border-2 bg-white text-black shadow-xl">
+                <div class="mx-8 mt-7 mb-1 flex flex-row justify-start space-x-2">
+                    <div class="h-7 w-3 bg-[#0DE6AC]"></div>
+                    <div class="w-3 text-center font-sans text-xl font-bold">
+                        <h1>Register</h1>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <input class="my-2 w-72 border p-2" type="email" placeholder="Username" @bind="userName"/>
+                </div>
+                <div class="flex flex-col items-center">
+                    <input class="my-2 w-72 border p-2" type="password" placeholder="Password" @bind="password"/>
+                </div>
+                @if (!string.IsNullOrEmpty(resultMsg))
+                {
+                    <div class="field">
+                        <label style="color: Green">
+                            @resultMsg
+                        </label>
+                    </div>
+                }
+                <div class="my-2 flex justify-center">
+                    <button class="w-72 border bg-[#0DE6AC] p-2 font-sans" @onclick="Create">Create</button>
+                </div>
+
+            </div>
+        </NotAuthorized>
+        <Authorized>
+            <div class="card">
+                <h3>Hello, @context.User.Identity.Name</h3>
+            </div>
+        </Authorized>
+    </AuthorizeView>
 </CascadingAuthenticationState>
+
 @code {
     private string userName = "";
     private string password = "";
@@ -57,7 +64,7 @@
 
         try
         {
-            await userService.Create(new UserCreationDto(userName,password));
+            await userService.Create(new UserCreationDto(userName, password));
             userName = "";
             resultMsg = "User successfully created";
             color = "green";
@@ -66,7 +73,15 @@
         {
             Console.WriteLine(e);
             resultMsg = e.Message;
-           
         }
-    }
+    @code
+    {
+        private void Home()
+        {
+            NavManager.NavigateTo("/Home");
+        }
+    }}
+
+}
+    
 }

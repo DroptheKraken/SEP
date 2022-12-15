@@ -7,13 +7,13 @@ public class RecipeCreationDto
     
     public string Description { get; }
     
-    public string Ingredients { get; }
+    public string[] Ingredients { get; }
     
     public int Status { get; }
 
     public int userID { get; }
     
-    public RecipeCreationDto(int ownerId, string title, string description, string ingredients)
+    public RecipeCreationDto(int ownerId, string title, string description, string[] ingredients)
     {
         Id = ownerId;
         Title = title;

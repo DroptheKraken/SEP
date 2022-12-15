@@ -51,13 +51,13 @@
             <h1 class="text-4xl font-bold text-yellow-900 md:text-5xl lg:w-10/12">What ingredients do you have ?</h1>
             <form action="" class="mt-12 w-full">
               <div class="relative flex rounded-full border border-yellow-200 bg-white p-1 shadow-md md:p-2">
-                <select class="hidden rounded-full bg-transparent p-3 md:block md:p-4" name="domain" id="domain">
+                @*<select class="hidden rounded-full bg-transparent p-3 md:block md:p-4" name="domain" id="domain">
                   <option value="meat">Meat</option>
                   <option value="vegetarian">Vegetarian</option>
                   <option value="vegan">Vegan</option>
-                </select>
-                <input placeholder="search ingredients" class="w-full rounded-full p-4" type="text" />
-                <button type="button" title="Search" class="ml-auto rounded-full bg-gradient-to-b bg-yellow-300 py-3 px-6 text-center transition hover:bg-red-100 focus:bg-yellow-300 active:bg-yellow-400 md:px-12">
+                </select>*@
+                <input placeholder="search ingredients" class="w-full rounded-full p-4" type="text" @bind="parameter" />
+                <button type="button" title="Search" class="ml-auto rounded-full bg-gradient-to-b bg-yellow-300 py-3 px-6 text-center transition hover:bg-red-100 focus:bg-yellow-300 active:bg-yellow-400 md:px-12" @onclick="GetRecipes">
                   <span class="hidden font-semibold text-yellow-900 md:block"> Search </span>
                   <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto w-5 text-yellow-900 md:hidden" fill="currentColor"viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
@@ -87,6 +87,7 @@
 
 @code
 {
+  private string parameter = "";
   private void Login()
   {
     NavManager.NavigateTo("/Login");
@@ -104,6 +105,11 @@
   private void Register()
   {
     NavManager.NavigateTo("/Register");
+  }
+  
+  private void GetRecipes()
+  {
+    NavManager.NavigateTo($"/Recipe/{parameter}");
   }
   
 }

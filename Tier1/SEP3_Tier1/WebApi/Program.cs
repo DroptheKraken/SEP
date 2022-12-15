@@ -33,6 +33,8 @@ builder.Services.AddScoped<FileContext>();
 builder.Services.AddScoped<IUserDao, UserFileDao>();
 builder.Services.AddScoped<IUserLogic, UserLogic>();
 builder.Services.AddControllers().AddNewtonsoftJson();
+builder.Services.AddScoped<IRecipeLogic, RecipeLogic>();
+
 
 
 

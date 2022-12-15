@@ -1,0 +1,67 @@
+﻿@page "/Recipe/{search}"
+@using BlazorAppTier1.CLient
+@using Application.Logic
+@using Application.LogicInterfaces
+
+@layout ShowRecipeLayout
+
+<h3>Recipe</h3>
+
+ <table class='table'>
+        <thead>
+            <tr>
+                <th>EmpID</th>
+                <th>EmpName</th>
+                <th>EmpCountry</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var emp in branches)
+            {
+                <tr>
+                    <td>@emp.Title</td>
+                    <td>@emp.Description</td>
+                    <td >@for (int i = 0; i < @emp.Ingredients.Length; i++)
+                         {
+
+                             <span>@emp.Ingredients[i], </span>
+                             
+                         }             </td>
+                   
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+@code {
+
+    [Parameter]
+    public string search { get; set; }
+
+    private List<Domain.Models.Recipe>? branches = new List<Domain.Models.Recipe>();
+    private bool getBranchesError;
+    private bool shouldRender;
+    private string test;
+    private IRecipeLogic _recipeLogic = new RecipeLogic();
+
+
+    protected override void OnParametersSet()
+    {
+        test = search;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        branches = await _recipeLogic.GetByIngredientsAsync(search);
+            Console.WriteLine(branches);
+            branches.ForEach(Console.WriteLine);
+            /*branches =  Connection.FetchRecipeAsync().Result;*/
+            
+            
+        }
+     
+
+    }
+
+}

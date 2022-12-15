@@ -24,8 +24,8 @@ public class RecipeController : ControllerBase
          {
              try
              {
-                 Recipe user = await recipelogic.CreateAsync(dto);
-                 return Created($"/", user);
+                 Recipe recipe = await recipelogic.CreateAsync(dto);
+                 return Created($"/", recipe);
              }
              catch (Exception e)
              {
@@ -33,12 +33,20 @@ public class RecipeController : ControllerBase
                  return StatusCode(500, e.Message);
              }
          }
-         
-        /*[HttpGet]
-        public async Task<List<Recipe>> SearchIssuesAsync(string searchItem)
-        {
-            return await Task.Run(() => Recipe.Search(searchItem));*/
-        
 
-    
+         [HttpGet]
+         public async Task<List<Recipe>> SearchRecipesAsync(string searchItem)
+         {
+             try
+             {
+                    return await recipelogic.GetByIngredientsAsync(searchItem);
+             }
+             catch (Exception e)
+             {
+                 Console.WriteLine(e);
+                 throw;
+             }
+
+         }
+
 }
