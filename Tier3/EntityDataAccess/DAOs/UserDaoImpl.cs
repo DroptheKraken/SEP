@@ -19,7 +19,7 @@ public class UserDaoImpl : IUserDao
         {
             Console.Write(user.Username);
             EntityEntry<User> addedUser = await _context.Users.AddAsync(user);
-            await _context.SaveChangesAsync();
+            await     _context.SaveChangesAsync(); //ups
             return addedUser.Entity;
         }
         catch (Exception e)

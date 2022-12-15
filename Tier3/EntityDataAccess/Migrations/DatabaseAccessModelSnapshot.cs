@@ -63,7 +63,7 @@ namespace EntityDataAccess.Migrations
                     b.ToTable("Ratings");
                 });
 
-            modelBuilder.Entity("Domain.Models.Recipe", b =>
+                    modelBuilder.Entity("Domain.Models.Recipe", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

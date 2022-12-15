@@ -14,7 +14,7 @@ namespace EntityDataAccess.Migrations
                 newName: "LikedRecipes");
         }
 
-        protected override void Down(MigrationBuilder migrationBuilder)
+        protected        override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.RenameColumn(
                 name: "LikedRecipes",
