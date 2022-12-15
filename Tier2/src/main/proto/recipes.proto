@@ -1,10 +1,11 @@
 syntax = "proto3";
 option java_multiple_files = true;
-option java_package = "via.sep3.grpc.proto";
+option java_package = "protos";
 
 
 service RecipeFinder{
   rpc GetRecipes (RecipeRequest) returns (RecipeResponse) {}
+  rpc AddRecipe (Recipe) returns (RecipeResponse) {}
 }
 message RecipeRequest
 {
@@ -12,5 +13,13 @@ message RecipeRequest
 }
 message RecipeResponse
 {
-   string recipes = 1;
+  repeated Recipe recipes = 1;
+}
+message Recipe
+{
+  int32 user_id = 1;
+  string name = 2;
+  string ingredients = 3;
+  string description = 4;
+  bool status = 5;
 }

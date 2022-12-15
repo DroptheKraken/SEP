@@ -1,0 +1,26 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "protos";
+
+package protos;
+
+service UserService1 {
+  rpc AddUser (UserObj) returns (UserObj);
+  rpc GetUser (Username) returns (UserObj);
+  rpc GetUsers (Empty) returns (stream UserObj);
+}
+
+
+message UserObj {
+  int32 id = 1;
+  string username = 2;
+  string password = 3;
+  string email = 4;
+  string role = 5;
+}
+
+
+message Username {
+  string userName = 1;
+}
+message Empty {}
