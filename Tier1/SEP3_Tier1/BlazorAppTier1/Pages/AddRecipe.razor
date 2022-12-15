@@ -1,18 +1,23 @@
 ﻿@page "/AddRecipe"
-@using BlazorAppTier1.Services
+
 @using Domain.DTOs
 @using Domain.Models
 @using HttpClients.ClientInterfaces
 @inject NavigationManager NavigationManager
 @inject IUserInterface _userInterface
 @inject IRecipeInterface _recipeInterface
-@layout RecipeLayout
+@layout LoginLayout
 
 
 
 
-<h3>AddRecipe</h3>
+
 <div class="card">
+    <div class="mx-5 my-3 flex justify-between text-sm font-semibold underline underline-offset-2" @onclick="Home">
+                    <div>
+                        <button>Go to Home</button>
+                    </div>
+                </div>
     @if (users == null)
     {
         <label>Loading users...</label>
@@ -23,37 +28,40 @@
     }
     else
     {
-        <h3>Create Todo</h3>
-        <div class="form-group field">
+        <h3>Create Recipe</h3>
+
+        <div class="form-group field bg">
             <label>Title:</label>
-            <input type="text" @bind="todoTitle"/>
-        </div>
-        <div class="form-group field">
-            <label>Assignee:</label>
-            <select @bind="selectedUserId">
-                <option>Choose</option>
-                @foreach (User user in users)
-                {
-                    <option value="@user.Id">@user.UserName</option>
+            <input type="text" @bind="Title"/>
+            <div class="form-group field bg">
+                <label>Desciption:</label>
+                <input type="text" @bind="description"/>
+                <div class="form-group field">
+                    <label>Ingredients:</label>
+                    <input type="text"  @bind="ingredients"/>
+
+
+                </div>
+                <div class="button-row">
+                    @if (!string.IsNullOrEmpty(msg))
+                    {
+                        <label style="color: red">@msg</label>
+                    }
+                    <button @onclick="Create" class="acceptbtn">Create</button>
+                </div>
                 }
-            </select>
+            </div>
         </div>
-        <div class="button-row">
-            @if (!string.IsNullOrEmpty(msg))
-            {
-                <label style="color: red">@msg</label>
-            }
-            <button @onclick="Create" class="acceptbtn">Create</button>
-        </div>
+
     }
 </div>
 
 @code {
     private IEnumerable<User>? users;
-    private int? selectedUserId;
-    private string todoTitle = "";
+    private int? selectedUserId=1;
+    private string Title = "";
     private string description = "";
-    private string[] ingredients = {""};
+    private string ingredients = "";
     
 
     private string msg = "";
@@ -74,21 +82,12 @@
 
     private async Task Create()
     {
-        msg = "";
-        if (selectedUserId == null)
-        {
-            msg = "You must select an assignee!";
-            return;
-        }
-        if (string.IsNullOrEmpty(todoTitle))
-        {
-            msg = "Title cannot be empty!";
-            return;
-        }
 
         try
         {
-            RecipeCreationDto dto = new((int)selectedUserId, todoTitle, description, ingredients);
+            
+            String[] ingredientsArray = ingredients.Split(",");
+            RecipeCreationDto dto = new((int)selectedUserId, Title, description, ingredientsArray);
             await _recipeInterface.CreateAsync(dto);
             NavigationManager.NavigateTo("/");
         }
@@ -97,6 +96,10 @@
             Console.WriteLine(e);
             msg = e.Message;
         }
+    }
+    private void Home()
+    {
+        NavigationManager.NavigateTo("/Home");
     }
 }
 }

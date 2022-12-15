@@ -1,7 +1,6 @@
 ﻿using System.Data;
 using System.Net.Http.Json;
 using System.Text.Json;
-
 using Domain.DTOs;
 using Domain.Models;
 using HttpClients.ClientInterfaces;
@@ -20,14 +19,14 @@ public class UserHttpClient : IUserInterface
 
     public async Task<User> Create(UserCreationDto dto)
     {
-        User user = Connection.CreateUser(dto.UserName, dto.Password).Result;
-  
+        User user = await Connection.CreateUser(dto.UserName, dto.Password);
+
         return user;
     }
 
     public async Task<IEnumerable<User>> GetUsers()
     {
-       List<User> users = Connection.FetchUsers().Result;
+        List<User> users = await Connection.FetchUsers();
         return users;
-    }  
+    }
 }

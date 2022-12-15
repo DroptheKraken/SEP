@@ -1,8 +1,9 @@
 ﻿using Domain.DTOs;
+using Domain.Models;
 
 namespace HttpClients.ClientInterfaces;
 
 public interface IRecipeInterface
 {
-     Task CreateAsync(RecipeCreationDto dto);
+     Task<Recipe> CreateAsync(RecipeCreationDto dto);
 }
