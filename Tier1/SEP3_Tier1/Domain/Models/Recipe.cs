@@ -6,7 +6,6 @@ public class Recipe
 {
     [JsonPropertyName("id")]
     public int Id { get; set; }
-    
     public int userId { get; set; }
     [JsonPropertyName("name")]
     public string Title { get; set; }
@@ -15,7 +14,7 @@ public class Recipe
     public string Description { get; set; }
     [JsonPropertyName("ingridient")]
     public string[] Ingredients { get; set; }
-    
+    [JsonPropertyName("status")]
     public bool Status { get; set; }
 
 

@@ -105,21 +105,23 @@ public class UserService : UserService1.UserService1Base
         return base.GetLikedRecipes(request, context);
     }
 
-    public override Task<Empty> LikeRecipe(Recipe1 request, ServerCallContext context)
+    public override async Task<Recipe1> LikeRecipe(LikeRequest request, ServerCallContext context)
     {
-        foreach (var VARIABLE in _databaseAccess.Users)
+        _databaseAccess.Favorites.Add(new Favorite()
         {
-            if (VARIABLE.Id == request.UserId)
-            {
-                VARIABLE.LikedRecipesIds = VARIABLE.LikedRecipesIds + request.Id + ",";
-            }
-
-            {
-                _databaseAccess.Users.Update(VARIABLE);
-                _databaseAccess.SaveChanges();
-            }
-        }
-
-        return new Task<Empty>(() => new Empty());
+            RecipeId = request.RecipeId,
+            UserId = request.UserId
+        });
+        _databaseAccess.SaveChanges();
+        Domain.Models.Recipe recipe = await _databaseAccess.Recipes.FindAsync(request.RecipeId);
+        Recipe1 recipe1 = new Recipe1()
+        {
+            Id = recipe.Id,
+            Name = recipe.Title,
+            Description = recipe.Description,
+            Ingredients = recipe.Ingredients,
+            UserId = recipe.UserId,
+        };
+        return recipe1;
     }
 }

@@ -138,29 +138,29 @@ public final class UserService1Grpc {
     return getGetLikedRecipesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<protos.Recipe1,
-      protos.Empty> getLikeRecipeMethod;
+  private static volatile io.grpc.MethodDescriptor<protos.LikeRequest,
+      protos.Recipe1> getLikeRecipeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "LikeRecipe",
-      requestType = protos.Recipe1.class,
-      responseType = protos.Empty.class,
+      requestType = protos.LikeRequest.class,
+      responseType = protos.Recipe1.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<protos.Recipe1,
-      protos.Empty> getLikeRecipeMethod() {
-    io.grpc.MethodDescriptor<protos.Recipe1, protos.Empty> getLikeRecipeMethod;
+  public static io.grpc.MethodDescriptor<protos.LikeRequest,
+      protos.Recipe1> getLikeRecipeMethod() {
+    io.grpc.MethodDescriptor<protos.LikeRequest, protos.Recipe1> getLikeRecipeMethod;
     if ((getLikeRecipeMethod = UserService1Grpc.getLikeRecipeMethod) == null) {
       synchronized (UserService1Grpc.class) {
         if ((getLikeRecipeMethod = UserService1Grpc.getLikeRecipeMethod) == null) {
           UserService1Grpc.getLikeRecipeMethod = getLikeRecipeMethod =
-              io.grpc.MethodDescriptor.<protos.Recipe1, protos.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<protos.LikeRequest, protos.Recipe1>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "LikeRecipe"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  protos.Recipe1.getDefaultInstance()))
+                  protos.LikeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  protos.Empty.getDefaultInstance()))
+                  protos.Recipe1.getDefaultInstance()))
               .setSchemaDescriptor(new UserService1MethodDescriptorSupplier("LikeRecipe"))
               .build();
         }
@@ -247,8 +247,8 @@ public final class UserService1Grpc {
 
     /**
      */
-    public void likeRecipe(protos.Recipe1 request,
-        io.grpc.stub.StreamObserver<protos.Empty> responseObserver) {
+    public void likeRecipe(protos.LikeRequest request,
+        io.grpc.stub.StreamObserver<protos.Recipe1> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLikeRecipeMethod(), responseObserver);
     }
 
@@ -286,8 +286,8 @@ public final class UserService1Grpc {
             getLikeRecipeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                protos.Recipe1,
-                protos.Empty>(
+                protos.LikeRequest,
+                protos.Recipe1>(
                   this, METHODID_LIKE_RECIPE)))
           .build();
     }
@@ -341,8 +341,8 @@ public final class UserService1Grpc {
 
     /**
      */
-    public void likeRecipe(protos.Recipe1 request,
-        io.grpc.stub.StreamObserver<protos.Empty> responseObserver) {
+    public void likeRecipe(protos.LikeRequest request,
+        io.grpc.stub.StreamObserver<protos.Recipe1> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getLikeRecipeMethod(), getCallOptions()), request, responseObserver);
     }
@@ -393,7 +393,7 @@ public final class UserService1Grpc {
 
     /**
      */
-    public protos.Empty likeRecipe(protos.Recipe1 request) {
+    public protos.Recipe1 likeRecipe(protos.LikeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLikeRecipeMethod(), getCallOptions(), request);
     }
@@ -439,8 +439,8 @@ public final class UserService1Grpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<protos.Empty> likeRecipe(
-        protos.Recipe1 request) {
+    public com.google.common.util.concurrent.ListenableFuture<protos.Recipe1> likeRecipe(
+        protos.LikeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLikeRecipeMethod(), getCallOptions()), request);
     }
@@ -486,8 +486,8 @@ public final class UserService1Grpc {
               (io.grpc.stub.StreamObserver<protos.RecipeResponse1>) responseObserver);
           break;
         case METHODID_LIKE_RECIPE:
-          serviceImpl.likeRecipe((protos.Recipe1) request,
-              (io.grpc.stub.StreamObserver<protos.Empty>) responseObserver);
+          serviceImpl.likeRecipe((protos.LikeRequest) request,
+              (io.grpc.stub.StreamObserver<protos.Recipe1>) responseObserver);
           break;
         default:
           throw new AssertionError();

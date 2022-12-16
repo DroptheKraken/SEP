@@ -7,7 +7,7 @@ service UserService1 {
   rpc GetUser (Username) returns (UserObj);
   rpc GetUsers (Empty) returns (stream UserObj);
   rpc GetLikedRecipes (Username) returns (RecipeResponse1) {}
-  rpc LikeRecipe (Recipe1) returns (Empty) {}
+  rpc LikeRecipe (LikeRequest) returns (Recipe1) {}
 }
 
 
@@ -36,5 +36,10 @@ message Recipe1
   string description = 4;
   bool status = 5;
   int32 id = 6;
+}
+message LikeRequest
+{
+  int32 user_id = 1;
+  int32 recipe_id = 2;
 }
 message Empty {}

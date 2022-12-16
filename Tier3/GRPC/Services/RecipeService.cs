@@ -78,7 +78,6 @@ public class RecipeService : RecipeFinder.RecipeFinderBase
                 VARIABLE.Description = request.Description;
                 VARIABLE.Ingredients = request.Ingredients;
                 VARIABLE.Status = request.Status;
-                VARIABLE.Id = request.Id;
                 response.Recipes.Add(new Recipe()
                 {
                     Name = VARIABLE.Title,

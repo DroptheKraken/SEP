@@ -2,5 +2,5 @@
 
 public static class DataStorageStatic
 {
-    public static User CurrentUser { get; set; }
+    public static int CurrentUser;
 }

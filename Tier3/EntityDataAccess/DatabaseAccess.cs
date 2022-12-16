@@ -1,13 +1,16 @@
-﻿using Domain.Models;
+﻿
+using Domain.Models;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace EntityDataAccess;
 
 public class DatabaseAccess : DbContext
 {
-    public DbSet<User>?Users { get; set; }
+    public DbSet<User>?Users { get; set; }  
+    public DbSet<Favorite>Favorites { get; set; }
     public DbSet<Recipe> Recipes { get; set; }
-    public DbSet<Favorite> Favorites { get; set; }
+ 
     
     public DbSet<Ingredient> Ingredients { get; set; }
     // public DbSet<RecipeIngredient> RecipeIngredients { get; set; }  // not a bad idea... 
@@ -41,7 +44,6 @@ public class DatabaseAccess : DbContext
        
         //Favorite
         modelBuilder.Entity<Favorite>().HasKey(favorite => new {favorite.UserId, favorite.RecipeId});
-        
         // RecipeRequest
         // modelBuilder.Entity<RecipeRequest>().HasKey(r => r.Id);
         modelBuilder.Entity<RecipeRequest>().ToTable("RecipeRequests"); //inherited from Recipe
