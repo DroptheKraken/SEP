@@ -7,6 +7,8 @@ public class DatabaseAccess : DbContext
 {
     public DbSet<User>?Users { get; set; }
     public DbSet<Recipe> Recipes { get; set; }
+    public DbSet<Favorite> Favorites { get; set; }
+    
     public DbSet<Ingredient> Ingredients { get; set; }
     // public DbSet<RecipeIngredient> RecipeIngredients { get; set; }  // not a bad idea... 
     public DbSet<Rating> Ratings { get; set; }
@@ -23,24 +25,6 @@ public class DatabaseAccess : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        /*modelBuilder.Entity<User>().HasData(
-            new User
-            {
-                Id = 1,
-                Username = "Alex",
-                Email = "alex@gmai.com",
-                Password = "1234",
-                Role = "Admin"
-            },
-            new User
-            {
-                Id = 2,
-                Username = "Bhupas",
-                Email = "bp@gmail.com",
-                Password = "pass",
-                Role = "Admin"
-            }
-        );*/
         // Constraints, Primary keys, Foreign keys, etc.
         // User
         modelBuilder.Entity<User>().HasKey(user => user.Id);
@@ -55,6 +39,9 @@ public class DatabaseAccess : DbContext
             .HasForeignKey(fk => fk.RecipeId);
             */
        
+        //Favorite
+        modelBuilder.Entity<Favorite>().HasKey(favorite => new {favorite.UserId, favorite.RecipeId});
+        
         // RecipeRequest
         // modelBuilder.Entity<RecipeRequest>().HasKey(r => r.Id);
         modelBuilder.Entity<RecipeRequest>().ToTable("RecipeRequests"); //inherited from Recipe
