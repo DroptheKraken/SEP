@@ -39,7 +39,7 @@
                         <span>@emp.Ingredients[i], </span>
                     }
                 </td>
-                <td><input type='button' style='width:100%; height:100%;border: 2px solid black' value="Like Recipe"/></td>
+                <td><input type='button' style='width:100%; height:100%;border: 2px solid black' value="Like Recipe"@onclick="@(() => Like(@emp))"/></td>
 
             </tr>
         }
@@ -80,6 +80,10 @@
     private void Home()
     {
         NavManager.NavigateTo("/Home");
+    }
+    private void Like(Recipe recipe)
+    {
+        Connection.LikeRecipe(recipe);
     }
 
 }

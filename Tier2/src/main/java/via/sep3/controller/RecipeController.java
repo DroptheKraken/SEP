@@ -89,6 +89,7 @@ public class RecipeController
         return GRPCconverter.getRecipeFromRecipeResponese(stub.updateRecipe(recipe1));
 
     }
+
     //delete
     @RequestMapping(value = "/recipe/{id}",
             method = RequestMethod.DELETE,
@@ -105,9 +106,10 @@ public class RecipeController
         protos.Recipe recipe1 = protos.Recipe.newBuilder()
                 .setId(id)
                 .build();
-               return GRPCconverter.getRecipeFromRecipeResponese(stub.deleteRecipe(recipe1));
+        return GRPCconverter.getRecipeFromRecipeResponese(stub.deleteRecipe(recipe1));
 
     }
-
 }
+
+
 

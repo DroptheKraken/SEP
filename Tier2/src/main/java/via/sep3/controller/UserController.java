@@ -6,8 +6,10 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import protos.Empty;
 
+import protos.Recipe1;
 import protos.UserObj;
 import protos.UserService1Grpc;
+import via.sep3.model.Recipe;
 import via.sep3.model.User;
 
 import java.util.ArrayList;
@@ -83,4 +85,44 @@ public class UserController
         return users;
 
     }
+
+    @RequestMapping(value = "/likedrecipes",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public List<Recipe> getLikedRecipes(@PathVariable String username)
+    {
+        List<Recipe> recipes = new ArrayList<>();
+
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 5001)
+                .usePlaintext()
+                .build();
+
+        UserService1Grpc.UserService1BlockingStub stub
+                = UserService1Grpc.newBlockingStub(channel);
+
+        return recipes;
+    }
+
+    @RequestMapping(value = "/likerecipe/{id}/{user_id}",
+            method = RequestMethod.POST,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public void likeRecipe(@PathVariable int id, @PathVariable int user_id)
+    {
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 5001)
+                .usePlaintext()
+                .build();
+
+        UserService1Grpc.UserService1BlockingStub stub
+                = UserService1Grpc.newBlockingStub(channel);
+
+        Recipe1 recipe1 = Recipe1.newBuilder().setId(id).setUserId(user_id).build();
+
+        stub.likeRecipe(recipe1);
+    }
+
+
+
 }
+

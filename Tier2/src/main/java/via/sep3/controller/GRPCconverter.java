@@ -16,6 +16,7 @@ public class GRPCconverter
                 .setPassword(user.getPassword())
                 .setUsername(user.getUsername())
                 .setRole("user")
+                .setLikedRecipes(user.getLikedRecipes())
                 .build();
         return userObj;
     }
@@ -28,6 +29,7 @@ public class GRPCconverter
         user.setPassword(userObj.getPassword());
         user.setEmail(userObj.getEmail());
         user.setRole(userObj.getRole());
+        user.setLikedRecipes(userObj.getLikedRecipes());
         return user;
     }
 

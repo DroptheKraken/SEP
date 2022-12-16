@@ -60,4 +60,16 @@ public interface UserObjOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRoleBytes();
+
+  /**
+   * <code>string LikedRecipes = 6;</code>
+   * @return The likedRecipes.
+   */
+  java.lang.String getLikedRecipes();
+  /**
+   * <code>string LikedRecipes = 6;</code>
+   * @return The bytes for likedRecipes.
+   */
+  com.google.protobuf.ByteString
+      getLikedRecipesBytes();
 }

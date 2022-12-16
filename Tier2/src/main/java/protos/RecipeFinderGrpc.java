@@ -76,37 +76,6 @@ public final class RecipeFinderGrpc {
     return getAddRecipeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<protos.UserObject,
-      protos.RecipeResponse> getGetLikedRecipesMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetLikedRecipes",
-      requestType = protos.UserObject.class,
-      responseType = protos.RecipeResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<protos.UserObject,
-      protos.RecipeResponse> getGetLikedRecipesMethod() {
-    io.grpc.MethodDescriptor<protos.UserObject, protos.RecipeResponse> getGetLikedRecipesMethod;
-    if ((getGetLikedRecipesMethod = RecipeFinderGrpc.getGetLikedRecipesMethod) == null) {
-      synchronized (RecipeFinderGrpc.class) {
-        if ((getGetLikedRecipesMethod = RecipeFinderGrpc.getGetLikedRecipesMethod) == null) {
-          RecipeFinderGrpc.getGetLikedRecipesMethod = getGetLikedRecipesMethod =
-              io.grpc.MethodDescriptor.<protos.UserObject, protos.RecipeResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLikedRecipes"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  protos.UserObject.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  protos.RecipeResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new RecipeFinderMethodDescriptorSupplier("GetLikedRecipes"))
-              .build();
-        }
-      }
-    }
-    return getGetLikedRecipesMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<protos.Recipe,
       protos.RecipeResponse> getUpdateRecipeMethod;
 
@@ -233,13 +202,6 @@ public final class RecipeFinderGrpc {
 
     /**
      */
-    public void getLikedRecipes(protos.UserObject request,
-        io.grpc.stub.StreamObserver<protos.RecipeResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetLikedRecipesMethod(), responseObserver);
-    }
-
-    /**
-     */
     public void updateRecipe(protos.Recipe request,
         io.grpc.stub.StreamObserver<protos.RecipeResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateRecipeMethod(), responseObserver);
@@ -268,13 +230,6 @@ public final class RecipeFinderGrpc {
                 protos.Recipe,
                 protos.RecipeResponse>(
                   this, METHODID_ADD_RECIPE)))
-          .addMethod(
-            getGetLikedRecipesMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                protos.UserObject,
-                protos.RecipeResponse>(
-                  this, METHODID_GET_LIKED_RECIPES)))
           .addMethod(
             getUpdateRecipeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -325,14 +280,6 @@ public final class RecipeFinderGrpc {
 
     /**
      */
-    public void getLikedRecipes(protos.UserObject request,
-        io.grpc.stub.StreamObserver<protos.RecipeResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetLikedRecipesMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
     public void updateRecipe(protos.Recipe request,
         io.grpc.stub.StreamObserver<protos.RecipeResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -374,13 +321,6 @@ public final class RecipeFinderGrpc {
     public protos.RecipeResponse addRecipe(protos.Recipe request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAddRecipeMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public protos.RecipeResponse getLikedRecipes(protos.UserObject request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetLikedRecipesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -430,14 +370,6 @@ public final class RecipeFinderGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<protos.RecipeResponse> getLikedRecipes(
-        protos.UserObject request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetLikedRecipesMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<protos.RecipeResponse> updateRecipe(
         protos.Recipe request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -455,9 +387,8 @@ public final class RecipeFinderGrpc {
 
   private static final int METHODID_GET_RECIPES = 0;
   private static final int METHODID_ADD_RECIPE = 1;
-  private static final int METHODID_GET_LIKED_RECIPES = 2;
-  private static final int METHODID_UPDATE_RECIPE = 3;
-  private static final int METHODID_DELETE_RECIPE = 4;
+  private static final int METHODID_UPDATE_RECIPE = 2;
+  private static final int METHODID_DELETE_RECIPE = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -482,10 +413,6 @@ public final class RecipeFinderGrpc {
           break;
         case METHODID_ADD_RECIPE:
           serviceImpl.addRecipe((protos.Recipe) request,
-              (io.grpc.stub.StreamObserver<protos.RecipeResponse>) responseObserver);
-          break;
-        case METHODID_GET_LIKED_RECIPES:
-          serviceImpl.getLikedRecipes((protos.UserObject) request,
               (io.grpc.stub.StreamObserver<protos.RecipeResponse>) responseObserver);
           break;
         case METHODID_UPDATE_RECIPE:
@@ -559,7 +486,6 @@ public final class RecipeFinderGrpc {
               .setSchemaDescriptor(new RecipeFinderFileDescriptorSupplier())
               .addMethod(getGetRecipesMethod())
               .addMethod(getAddRecipeMethod())
-              .addMethod(getGetLikedRecipesMethod())
               .addMethod(getUpdateRecipeMethod())
               .addMethod(getDeleteRecipeMethod())
               .build();
@@ -569,3 +495,57 @@ public final class RecipeFinderGrpc {
     return result;
   }
 }
+/*Sure, I can provide you with an example of how you could implement a favorites feature in your application. Here is a general outline of the steps you can follow:
+
+        Create a database table to store the favorite recipes for each user. This table should have columns for the user's ID, the recipe's ID, and possibly some additional metadata (e.g. a timestamp to track when the recipe was added to the favorites).
+
+        In your Java server, create a RESTful API endpoint that allows users to add and remove recipes from their favorites. This endpoint should accept a request containing the user's ID and the recipe's ID, and should insert or delete a row in the favorites table accordingly.
+
+        In your Blazor frontend, create a user interface for displaying and interacting with the favorite recipes. This could be a separate page or a section on an existing page. You can use a list or a grid layout to display the recipes, and include buttons or other controls for adding and removing them from the favorites.
+
+        To retrieve the favorite recipes for a user, you can create a GRPC service method in your Java server that accepts a user's ID as a parameter and returns a list of the user's favorite recipes. You can then call this method from your Blazor frontend to populate the favorites page with the appropriate data.
+
+        Here is some sample code to illustrate these steps:
+
+        SQL table for storing favorite recipes:
+        Copy code
+        CREATE TABLE favorites (
+        user_id INTEGER NOT NULL,
+        recipe_id INTEGER NOT NULL,
+        added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (user_id, recipe_id)
+        );
+        Java RESTful API endpoint for adding and removing favorite recipes:
+        Copy code
+@POST
+@Path("/favorites/add")
+public Response addToFavorites(@FormParam("userId") int userId, @FormParam("recipeId") int recipeId) {
+        // Insert a row into the favorites table for the given user and recipe
+        String sql = "INSERT INTO favorites (user_id, recipe_id) VALUES (?, ?)";
+        try (PreparedStatement ps = connection.prepareStatement(sql)) {
+        ps.setInt(1, userId);
+        ps.setInt(2, recipeId);
+        ps.executeUpdate();
+        } catch (SQLException e) {
+        // Handle the exception
+        }
+        return Response.ok().build();
+        }
+
+@POST
+@Path("/favorites/remove")
+public Response removeFromFavorites(@FormParam("userId") int userId, @FormParam("recipeId") int recipeId) {
+        // Delete the row from the favorites table for the given user and recipe
+        String sql = "DELETE FROM favorites WHERE user_id = ? AND recipe_id = ?";
+        try (PreparedStatement ps = connection.prepareStatement(sql)) {
+        ps.setInt(1, userId);
+        ps.setInt(2, recipeId);
+        ps.executeUpdate();
+        } catch (SQLException e) {
+        // Handle the exception
+        }
+        return Response.ok().build();
+        }
+        Blazor user interface for displaying and interacting with favorite recipes:
+        Copy code
+@page "/favorites"*/

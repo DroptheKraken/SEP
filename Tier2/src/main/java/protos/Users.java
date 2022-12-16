@@ -15,15 +15,15 @@ public final class Users {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_protos_RecipeResponse_descriptor;
+    internal_static_protos_RecipeResponse1_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_protos_RecipeResponse_fieldAccessorTable;
+      internal_static_protos_RecipeResponse1_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_protos_Recipe_descriptor;
+    internal_static_protos_Recipe1_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_protos_Recipe_fieldAccessorTable;
+      internal_static_protos_Recipe1_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protos_UserObj_descriptor;
   static final 
@@ -48,42 +48,45 @@ public final class Users {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013users.proto\022\006protos\"1\n\016RecipeResponse\022" +
-      "\037\n\007recipes\030\001 \003(\0132\016.protos.Recipe\"m\n\006Reci" +
-      "pe\022\017\n\007user_id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\023\n\013ing" +
-      "redients\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\016\n\006s" +
-      "tatus\030\005 \001(\010\022\n\n\002id\030\006 \001(\005\"V\n\007UserObj\022\n\n\002id" +
-      "\030\001 \001(\005\022\020\n\010username\030\002 \001(\t\022\020\n\010password\030\003 \001" +
-      "(\t\022\r\n\005email\030\004 \001(\t\022\014\n\004role\030\005 \001(\t\"\034\n\010Usern" +
-      "ame\022\020\n\010userName\030\001 \001(\t\"\007\n\005Empty2\227\001\n\014UserS" +
-      "ervice1\022+\n\007AddUser\022\017.protos.UserObj\032\017.pr" +
-      "otos.UserObj\022,\n\007GetUser\022\020.protos.Usernam" +
-      "e\032\017.protos.UserObj\022,\n\010GetUsers\022\r.protos." +
-      "Empty\032\017.protos.UserObj0\001B\n\n\006protosP\001b\006pr" +
-      "oto3"
+      "\n\013users.proto\022\006protos\"3\n\017RecipeResponse1" +
+      "\022 \n\007recipes\030\001 \003(\0132\017.protos.Recipe1\"n\n\007Re" +
+      "cipe1\022\017\n\007user_id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\023\n\013" +
+      "ingredients\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\016" +
+      "\n\006status\030\005 \001(\010\022\n\n\002id\030\006 \001(\005\"l\n\007UserObj\022\n\n" +
+      "\002id\030\001 \001(\005\022\020\n\010username\030\002 \001(\t\022\020\n\010password\030" +
+      "\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\014\n\004role\030\005 \001(\t\022\024\n\014Li" +
+      "kedRecipes\030\006 \001(\t\"\034\n\010Username\022\020\n\010userName" +
+      "\030\001 \001(\t\"\007\n\005Empty2\207\002\n\014UserService1\022+\n\007AddU" +
+      "ser\022\017.protos.UserObj\032\017.protos.UserObj\022,\n" +
+      "\007GetUser\022\020.protos.Username\032\017.protos.User" +
+      "Obj\022,\n\010GetUsers\022\r.protos.Empty\032\017.protos." +
+      "UserObj0\001\022>\n\017GetLikedRecipes\022\020.protos.Us" +
+      "ername\032\027.protos.RecipeResponse1\"\000\022.\n\nLik" +
+      "eRecipe\022\017.protos.Recipe1\032\r.protos.Empty\"" +
+      "\000B\n\n\006protosP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_protos_RecipeResponse_descriptor =
+    internal_static_protos_RecipeResponse1_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_protos_RecipeResponse_fieldAccessorTable = new
+    internal_static_protos_RecipeResponse1_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_protos_RecipeResponse_descriptor,
+        internal_static_protos_RecipeResponse1_descriptor,
         new java.lang.String[] { "Recipes", });
-    internal_static_protos_Recipe_descriptor =
+    internal_static_protos_Recipe1_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_protos_Recipe_fieldAccessorTable = new
+    internal_static_protos_Recipe1_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_protos_Recipe_descriptor,
+        internal_static_protos_Recipe1_descriptor,
         new java.lang.String[] { "UserId", "Name", "Ingredients", "Description", "Status", "Id", });
     internal_static_protos_UserObj_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_protos_UserObj_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_UserObj_descriptor,
-        new java.lang.String[] { "Id", "Username", "Password", "Email", "Role", });
+        new java.lang.String[] { "Id", "Username", "Password", "Email", "Role", "LikedRecipes", });
     internal_static_protos_Username_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_protos_Username_fieldAccessorTable = new

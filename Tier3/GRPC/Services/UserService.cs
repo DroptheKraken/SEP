@@ -23,7 +23,8 @@ public class UserService : UserService1.UserService1Base
                 Username = request.Username,
                 Password = request.Password,
                 Email = request.Email,
-                Role = request.Role
+                Role = request.Role,
+                LikedRecipesIds = request.LikedRecipes
             };
             EntityEntry<User> addedUser = _databaseAccess.Users.Add(addingUser);
             await _databaseAccess.SaveChangesAsync();
@@ -34,7 +35,8 @@ public class UserService : UserService1.UserService1Base
                 Username = addedUser.Entity.Username,
                 Password = addedUser.Entity.Password,
                 Role = addedUser.Entity.Role,
-                Email = addedUser.Entity.Email
+                Email = addedUser.Entity.Email,
+                LikedRecipes = addedUser.Entity.LikedRecipesIds
             };
             Console.WriteLine("User added");
             return userObj;
@@ -69,6 +71,7 @@ public class UserService : UserService1.UserService1Base
             throw new RpcException(new Status(StatusCode.NotFound, e.Message));
         }
     }
+
     public override Task GetUsers(Empty request, IServerStreamWriter<UserObj> responseStream, ServerCallContext context)
     {
         try
@@ -87,6 +90,7 @@ public class UserService : UserService1.UserService1Base
                 };
                 responseStream.WriteAsync(userToSend);
             }
+
             Console.WriteLine("Users found");
             return Task.FromResult(0);
         }
@@ -94,5 +98,28 @@ public class UserService : UserService1.UserService1Base
         {
             throw new RpcException(new Status(StatusCode.NotFound, e.Message));
         }
+    }
+
+    public override Task<RecipeResponse1> GetLikedRecipes(Username request, ServerCallContext context)
+    {
+        return base.GetLikedRecipes(request, context);
+    }
+
+    public override Task<Empty> LikeRecipe(Recipe1 request, ServerCallContext context)
+    {
+        foreach (var VARIABLE in _databaseAccess.Users)
+        {
+            if (VARIABLE.Id == request.UserId)
+            {
+                VARIABLE.LikedRecipesIds = VARIABLE.LikedRecipesIds + request.Id + ",";
+            }
+
+            {
+                _databaseAccess.Users.Update(VARIABLE);
+                _databaseAccess.SaveChanges();
+            }
+        }
+
+        return new Task<Empty>(() => new Empty());
     }
 }

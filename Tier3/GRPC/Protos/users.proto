@@ -6,6 +6,8 @@ service UserService1 {
   rpc AddUser (UserObj) returns (UserObj);
   rpc GetUser (Username) returns (UserObj);
   rpc GetUsers (Empty) returns (stream UserObj);
+  rpc GetLikedRecipes (Username) returns (RecipeResponse1) {}
+  rpc LikeRecipe (Recipe1) returns (Empty) {}
 }
 
 
@@ -15,10 +17,24 @@ message UserObj {
   string password = 3;
   string email = 4;
   string role = 5;
+  string likedRecipes = 6;
 }
 
 
 message Username {
   string userName = 1;
+}
+message RecipeResponse1
+{
+  repeated Recipe1 recipes = 1;
+}
+message Recipe1
+{
+  int32 user_id = 1;
+  string name = 2;
+  string ingredients = 3;
+  string description = 4;
+  bool status = 5;
+  int32 id = 6;
 }
 message Empty {}

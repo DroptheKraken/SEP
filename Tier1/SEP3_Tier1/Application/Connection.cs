@@ -58,7 +58,7 @@ public class Connection
             PropertyNameCaseInsensitive = true
         });
         Console.WriteLine(user + " Connection ");
-
+        DataStorageStatic.CurrentUser = user;
         return user;
     }
 
@@ -205,7 +205,7 @@ public class Connection
             return true;
         };
         using HttpClient client = new HttpClient(clientHandler);
-       recipe.Status =true;
+        recipe.Status = true;
 
         var data = new StringContent(
             JsonSerializer.Serialize(recipe,
@@ -231,6 +231,7 @@ public class Connection
 
         return recipe1;
     }
+
     public static async Task<List<Recipe>> DeleteRecipe(Recipe recipe)
     {
         HttpClientHandler clientHandler = new HttpClientHandler();
@@ -240,7 +241,7 @@ public class Connection
             return true;
         };
         using HttpClient client = new HttpClient(clientHandler);
-        
+
         HttpResponseMessage responseMessage =
             await client.DeleteAsync($"http://localhost:8080/recipes/v1/recipe/{recipe.Id}");
 
@@ -260,5 +261,33 @@ public class Connection
         Console.WriteLine(recipe1);
 
         return recipe1;
+    }
+
+    public static async void LikeRecipe(Recipe recipe)
+    {
+        HttpClientHandler clientHandler = new HttpClientHandler();
+
+        clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) =>
+        {
+            return true;
+        };
+        using HttpClient client = new HttpClient(clientHandler);
+
+        var data = new StringContent(
+            JsonSerializer.Serialize(recipe,
+                new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase }), Encoding.UTF8,
+            "application/json");
+        HttpResponseMessage responseMessage =
+            await client.PutAsync(
+                $"http://localhost:8080/users/v1/likerecipe/{recipe.Id}/{DataStorageStatic.CurrentUser.Id}", data);
+        if (!responseMessage.IsSuccessStatusCode)
+        {
+            throw new Exception(responseMessage.StatusCode.ToString());
+        }
+
+        string result = await responseMessage.Content.ReadAsStringAsync();
+        Console.WriteLine(result);
+
+     
     }
 }
