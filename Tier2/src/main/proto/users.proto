@@ -8,8 +8,22 @@ service UserService1 {
   rpc AddUser (UserObj) returns (UserObj);
   rpc GetUser (Username) returns (UserObj);
   rpc GetUsers (Empty) returns (stream UserObj);
+
 }
 
+message RecipeResponse
+{
+  repeated Recipe recipes = 1;
+}
+message Recipe
+{
+  int32 user_id = 1;
+  string name = 2;
+  string ingredients = 3;
+  string description = 4;
+  bool status = 5;
+  int32 id = 6;
+}
 
 message UserObj {
   int32 id = 1;

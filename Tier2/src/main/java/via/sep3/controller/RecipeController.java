@@ -89,5 +89,25 @@ public class RecipeController
         return GRPCconverter.getRecipeFromRecipeResponese(stub.updateRecipe(recipe1));
 
     }
+    //delete
+    @RequestMapping(value = "/recipe/{id}",
+            method = RequestMethod.DELETE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public List<Recipe> deleteRecipe(@PathVariable int id)
+    {
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 5001)
+                .usePlaintext()
+                .build();
+
+        RecipeFinderGrpc.RecipeFinderBlockingStub stub
+                = RecipeFinderGrpc.newBlockingStub(channel);
+        protos.Recipe recipe1 = protos.Recipe.newBuilder()
+                .setId(id)
+                .build();
+               return GRPCconverter.getRecipeFromRecipeResponese(stub.deleteRecipe(recipe1));
+
+    }
+
 }
 

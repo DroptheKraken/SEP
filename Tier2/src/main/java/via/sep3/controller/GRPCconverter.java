@@ -40,14 +40,15 @@ public class GRPCconverter
         }
 
 
-
-    Recipe recipe1 = Recipe.newBuilder()
-            .setName(recipe.getName())
-            .setDescription(recipe.getDescription())
-            .setIngredients(ingredients)
-            .build();
+        Recipe recipe1 = Recipe.newBuilder()
+                .setName(recipe.getName())
+                .setDescription(recipe.getDescription())
+                .setIngredients(ingredients)
+                .setId(recipe.getId())
+                .setStatus(recipe.isStatus())
+                .build();
         return recipe1;
-}
+    }
 
     public static List<via.sep3.model.Recipe> getRecipeFromRecipeResponese(RecipeResponse recipe)
     {
@@ -62,6 +63,7 @@ public class GRPCconverter
 
             recipe2.setIngridient(ingredients);
             recipe2.setStatus(recipe1.getStatus());
+            recipe2.setId(recipe1.getId());
             recipes.add(recipe2);
         }
         {

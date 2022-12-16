@@ -138,6 +138,37 @@ public final class RecipeFinderGrpc {
     return getUpdateRecipeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<protos.Recipe,
+      protos.RecipeResponse> getDeleteRecipeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteRecipe",
+      requestType = protos.Recipe.class,
+      responseType = protos.RecipeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<protos.Recipe,
+      protos.RecipeResponse> getDeleteRecipeMethod() {
+    io.grpc.MethodDescriptor<protos.Recipe, protos.RecipeResponse> getDeleteRecipeMethod;
+    if ((getDeleteRecipeMethod = RecipeFinderGrpc.getDeleteRecipeMethod) == null) {
+      synchronized (RecipeFinderGrpc.class) {
+        if ((getDeleteRecipeMethod = RecipeFinderGrpc.getDeleteRecipeMethod) == null) {
+          RecipeFinderGrpc.getDeleteRecipeMethod = getDeleteRecipeMethod =
+              io.grpc.MethodDescriptor.<protos.Recipe, protos.RecipeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteRecipe"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  protos.Recipe.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  protos.RecipeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new RecipeFinderMethodDescriptorSupplier("DeleteRecipe"))
+              .build();
+        }
+      }
+    }
+    return getDeleteRecipeMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -214,6 +245,13 @@ public final class RecipeFinderGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateRecipeMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void deleteRecipe(protos.Recipe request,
+        io.grpc.stub.StreamObserver<protos.RecipeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteRecipeMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -244,6 +282,13 @@ public final class RecipeFinderGrpc {
                 protos.Recipe,
                 protos.RecipeResponse>(
                   this, METHODID_UPDATE_RECIPE)))
+          .addMethod(
+            getDeleteRecipeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                protos.Recipe,
+                protos.RecipeResponse>(
+                  this, METHODID_DELETE_RECIPE)))
           .build();
     }
   }
@@ -293,6 +338,14 @@ public final class RecipeFinderGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateRecipeMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void deleteRecipe(protos.Recipe request,
+        io.grpc.stub.StreamObserver<protos.RecipeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteRecipeMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -335,6 +388,13 @@ public final class RecipeFinderGrpc {
     public protos.RecipeResponse updateRecipe(protos.Recipe request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateRecipeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public protos.RecipeResponse deleteRecipe(protos.Recipe request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRecipeMethod(), getCallOptions(), request);
     }
   }
 
@@ -383,12 +443,21 @@ public final class RecipeFinderGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateRecipeMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<protos.RecipeResponse> deleteRecipe(
+        protos.Recipe request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteRecipeMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_RECIPES = 0;
   private static final int METHODID_ADD_RECIPE = 1;
   private static final int METHODID_GET_LIKED_RECIPES = 2;
   private static final int METHODID_UPDATE_RECIPE = 3;
+  private static final int METHODID_DELETE_RECIPE = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -421,6 +490,10 @@ public final class RecipeFinderGrpc {
           break;
         case METHODID_UPDATE_RECIPE:
           serviceImpl.updateRecipe((protos.Recipe) request,
+              (io.grpc.stub.StreamObserver<protos.RecipeResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_RECIPE:
+          serviceImpl.deleteRecipe((protos.Recipe) request,
               (io.grpc.stub.StreamObserver<protos.RecipeResponse>) responseObserver);
           break;
         default:
@@ -488,6 +561,7 @@ public final class RecipeFinderGrpc {
               .addMethod(getAddRecipeMethod())
               .addMethod(getGetLikedRecipesMethod())
               .addMethod(getUpdateRecipeMethod())
+              .addMethod(getDeleteRecipeMethod())
               .build();
         }
       }

@@ -3,39 +3,50 @@
 @using Application.Logic
 @using Application.LogicInterfaces
 @using Domain.Models
-
+@inject NavigationManager NavManager
 @layout ShowRecipeLayout
 
-<h3>Recipe</h3>
-
-<table class='table'>
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Ingrdients</th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach (var emp in branches)
-    {
+         <div class="mx-5 my-3 flex justify-between text-sm font-semibold underline underline-offset-2" @onclick="Home">
+                <div>
+                    <button>Go to Home</button>
+                </div>
+            </div>
+            <!-- component -->
+<div class="md:px-32 py-8 w-full">
+<div class="shadow overflow-hidden rounded border-b border-gray-200">
+<table class="min-w-full bg-white">
+      <thead class="bg-[#ffcc00] text-black">
         <tr>
-
-            <td>
-                @emp.Title<input type='button' style='width:100%; height:100%;border: 2px solid black' value="Like Recipe"/>
-            </td>
-            <td>@emp.Description</td>
-            <td >
-                @for (int i = 0; i < @emp.Ingredients.Length; i++)
-                {
-                    <span>@emp.Ingredients[i], </span>
-                }
-            </td>
+          <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Title</th>
+          <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Description</th>
+            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Ingredients</th>
+            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Add to Like</th>
 
         </tr>
-    }
-    </tbody>
-</table>
+      </thead>
+        <tbody>
+        @foreach (var emp in branches)
+        {
+            <tr>
+
+                <td>
+                    @emp.Title
+                </td>
+                <td>@emp.Description</td>
+                <td >
+                    @for (int i = 0; i < @emp.Ingredients.Length; i++)
+                    {
+                        <span>@emp.Ingredients[i], </span>
+                    }
+                </td>
+                <td><input type='button' style='width:100%; height:100%;border: 2px solid black' value="Like Recipe"/></td>
+
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+</div>
 
 
 @code {
@@ -57,12 +68,19 @@
     {
         List<Recipe> recipes = new List<Recipe>();
         recipes = await _recipeLogic.GetByIngredientsAsync(search);
-        branches =recipes.Where(x => x.Status.Equals(true)).ToList();
+        branches = recipes.Where(x => x.Status.Equals(true)).ToList();
         Console.WriteLine(branches);
         branches.ForEach(Console.WriteLine);
-  
+
     }
 
+
+@code
+{
+    private void Home()
+    {
+        NavManager.NavigateTo("/Home");
+    }
 
 }
 

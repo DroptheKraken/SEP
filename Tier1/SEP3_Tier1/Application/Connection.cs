@@ -231,4 +231,34 @@ public class Connection
 
         return recipe1;
     }
+    public static async Task<List<Recipe>> DeleteRecipe(Recipe recipe)
+    {
+        HttpClientHandler clientHandler = new HttpClientHandler();
+
+        clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) =>
+        {
+            return true;
+        };
+        using HttpClient client = new HttpClient(clientHandler);
+        
+        HttpResponseMessage responseMessage =
+            await client.DeleteAsync($"http://localhost:8080/recipes/v1/recipe/{recipe.Id}");
+
+        if (!responseMessage.IsSuccessStatusCode)
+        {
+            throw new Exception(responseMessage.StatusCode.ToString());
+        }
+
+        string result = await responseMessage.Content.ReadAsStringAsync();
+        Console.WriteLine(result);
+
+        List<Recipe> recipe1 = JsonSerializer.Deserialize<List<Recipe>>(result, new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            PropertyNameCaseInsensitive = true
+        });
+        Console.WriteLine(recipe1);
+
+        return recipe1;
+    }
 }

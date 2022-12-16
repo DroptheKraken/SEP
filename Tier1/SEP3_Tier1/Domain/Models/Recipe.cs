@@ -4,7 +4,7 @@ namespace Domain.Models;
 
 public class Recipe
 {
-    
+    [JsonPropertyName("id")]
     public int Id { get; set; }
     
     public int userId { get; set; }

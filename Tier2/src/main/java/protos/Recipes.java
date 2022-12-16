@@ -45,17 +45,19 @@ public final class Recipes {
     java.lang.String[] descriptorData = {
       "\n\rrecipes.proto\"#\n\rRecipeRequest\022\022\n\ningr" +
       "edient\030\001 \001(\t\"*\n\016RecipeResponse\022\030\n\007recipe" +
-      "s\030\001 \003(\0132\007.Recipe\"a\n\006Recipe\022\017\n\007user_id\030\001 " +
+      "s\030\001 \003(\0132\007.Recipe\"m\n\006Recipe\022\017\n\007user_id\030\001 " +
       "\001(\005\022\014\n\004name\030\002 \001(\t\022\023\n\013ingredients\030\003 \001(\t\022\023" +
-      "\n\013description\030\004 \001(\t\022\016\n\006status\030\005 \001(\010\"Y\n\nU" +
-      "serObject\022\n\n\002id\030\001 \001(\005\022\020\n\010username\030\002 \001(\t\022" +
-      "\020\n\010password\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\014\n\004role" +
-      "\030\005 \001(\t2\307\001\n\014RecipeFinder\022/\n\nGetRecipes\022\016." +
-      "RecipeRequest\032\017.RecipeResponse\"\000\022\'\n\tAddR" +
-      "ecipe\022\007.Recipe\032\017.RecipeResponse\"\000\0221\n\017Get" +
-      "LikedRecipes\022\013.UserObject\032\017.RecipeRespon" +
-      "se\"\000\022*\n\014UpdateRecipe\022\007.Recipe\032\017.RecipeRe" +
-      "sponse\"\000B\n\n\006protosP\001b\006proto3"
+      "\n\013description\030\004 \001(\t\022\016\n\006status\030\005 \001(\010\022\n\n\002i" +
+      "d\030\006 \001(\005\"Y\n\nUserObject\022\n\n\002id\030\001 \001(\005\022\020\n\010use" +
+      "rname\030\002 \001(\t\022\020\n\010password\030\003 \001(\t\022\r\n\005email\030\004" +
+      " \001(\t\022\014\n\004role\030\005 \001(\t2\363\001\n\014RecipeFinder\022/\n\nG" +
+      "etRecipes\022\016.RecipeRequest\032\017.RecipeRespon" +
+      "se\"\000\022\'\n\tAddRecipe\022\007.Recipe\032\017.RecipeRespo" +
+      "nse\"\000\0221\n\017GetLikedRecipes\022\013.UserObject\032\017." +
+      "RecipeResponse\"\000\022*\n\014UpdateRecipe\022\007.Recip" +
+      "e\032\017.RecipeResponse\"\000\022*\n\014DeleteRecipe\022\007.R" +
+      "ecipe\032\017.RecipeResponse\"\000B\n\n\006protosP\001b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -78,7 +80,7 @@ public final class Recipes {
     internal_static_Recipe_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Recipe_descriptor,
-        new java.lang.String[] { "UserId", "Name", "Ingredients", "Description", "Status", });
+        new java.lang.String[] { "UserId", "Name", "Ingredients", "Description", "Status", "Id", });
     internal_static_UserObject_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_UserObject_fieldAccessorTable = new

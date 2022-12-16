@@ -12,7 +12,7 @@ public class Recipe
     private String[] ingridient;
     private String description;
     private boolean status;
-
+    private int id;
 
 
 }

@@ -9,6 +9,7 @@ service RecipeFinder{
   rpc AddRecipe (Recipe) returns (RecipeResponse) {}
   rpc GetLikedRecipes (UserObject) returns (RecipeResponse) {}
   rpc UpdateRecipe (Recipe) returns (RecipeResponse) {}
+  rpc DeleteRecipe (Recipe) returns (RecipeResponse) {}
 }
 message RecipeRequest
 {
@@ -25,6 +26,7 @@ message Recipe
   string ingredients = 3;
   string description = 4;
   bool status = 5;
+  int32 id = 6;
 }
 message UserObject
 {

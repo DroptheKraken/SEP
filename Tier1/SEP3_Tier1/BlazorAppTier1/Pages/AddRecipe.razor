@@ -1,4 +1,5 @@
-﻿@page "/AddRecipe"
+﻿
+@page "/AddRecipe"
 
 @using Domain.DTOs
 @using Domain.Models
@@ -9,60 +10,52 @@
 @layout LoginLayout
 
 
-
-
-
-<div class="card">
-    <div class="mx-5 my-3 flex justify-between text-sm font-semibold underline underline-offset-2" @onclick="Home">
-                    <div>
-                        <button>Go to Home</button>
-                    </div>
-                </div>
-    @if (users == null)
-    {
-        <label>Loading users...</label>
-    }
-    else if (!users.Any())
-    {
-        <label>No users, you cannot create a Todo without assignee.</label>
-    }
-    else
-    {
-        <h3>Create Recipe</h3>
-
-        <div class="form-group field bg">
-            <label>Title:</label>
-            <input type="text" @bind="Title"/>
-            <div class="form-group field bg">
-                <label>Desciption:</label>
-                <input type="text" @bind="description"/>
-                <div class="form-group field">
-                    <label>Ingredients:</label>
-                    <input type="text"  @bind="ingredients"/>
-
-
-                </div>
-                <div class="button-row">
-                    @if (!string.IsNullOrEmpty(msg))
-                    {
-                        <label style="color: red">@msg</label>
-                    }
-                    <button @onclick="Create" class="acceptbtn">Create</button>
-                </div>
-                }
-            </div>
+<div class="mx-5 my-3 flex justify-between text-sm font-semibold underline underline-offset-2" @onclick="Home">
+    <div>
+        <button>Go to Home</button>
+    </div>
+</div>
+<!-- component -->
+<div class="mx-auto my-36 flex h-[320px] w-[350px] flex-col border-2 bg-white text-black shadow-xl">
+    <div class="mx-8 mt-7 mb-1 flex flex-row justify-start space-x-2">
+        <div class="h-7 w-3 bg-[#ffcc00]"></div>
+        <div class="w-3 text-center font-sans text-xl font-bold">
+            <h1>Recipe</h1>
         </div>
 
-    }
+    </div>
+
+    <div class="flex flex-col items-center">
+        <input class="my-2 w-72 border p-2" type="Title" placeholder="Title" @bind="Title"/>
+    </div>
+    <div class="flex flex-col items-center">
+        <input class="my-2 w-72 border p-2" type="Description" placeholder="Description" @bind="description"/>
+    </div>
+    <div class="flex flex-col items-center">
+        <input class="my-2 w-72 border p-2" type="Ingredients" placeholder="Ingredients (Separated by commas)" @bind="ingredients"/>
+    </div>
+  <div class="flex flex-col items-center">
+      @if (!string.IsNullOrEmpty(msg))
+          {
+              <label style="color: red">@msg</label>
+          }
+
+        </div>
+    <div class="my-2 flex justify-center">
+        
+        <button class="w-72 border bg-[#ffcc00] p-2 font-sans" @onclick="Create">Create</button>
+ 
+    </div>
+
 </div>
 
 @code {
     private IEnumerable<User>? users;
-    private int? selectedUserId=1;
+    private int? selectedUserId = 1;
     private string Title = "";
     private string description = "";
     private string ingredients = "";
-    
+
 
     private string msg = "";
 
@@ -82,14 +75,19 @@
 
     private async Task Create()
     {
-
         try
         {
-            
-            String[] ingredientsArray = ingredients.Split(",");
-            RecipeCreationDto dto = new((int)selectedUserId, Title, description, ingredientsArray);
-            await _recipeInterface.CreateAsync(dto);
-            NavigationManager.NavigateTo("/");
+            if (Title == "" || description == "" || ingredients == "")
+            {
+                msg = "Please fill in all fields";
+            }
+            else
+            {
+                String[] ingredientsArray = ingredients.Split(",");
+                RecipeCreationDto dto = new((int)selectedUserId, Title, description, ingredientsArray);
+                await _recipeInterface.CreateAsync(dto);
+                NavigationManager.NavigateTo("/Recipes");
+            }
         }
         catch (Exception e)
         {
@@ -97,9 +95,12 @@
             msg = e.Message;
         }
     }
+
     private void Home()
     {
         NavigationManager.NavigateTo("/Home");
     }
+
 }
+
 }
