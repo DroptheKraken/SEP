@@ -13,6 +13,5 @@ To run the application, follow these steps:
 </ol>
   
   
-Now you are ready to use the Recipe Finder App! Simply input the ingredients you have in your fridge and the app will suggest a recipe for you. You can also create an account and add your own recipes to the database.
+Now you are ready to use the Recipe Finder App! We hope you enjoy using it!
 
-We hope you enjoy using the Recipe Finder App!
